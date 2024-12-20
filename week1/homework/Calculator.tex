@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{multicol}
+
+\title{Simple Calculator Program}
+\author{Ryan Baker}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Assignment}
+
+\noindent
+In this assignment, you will write a simple program that takes two numbers as input and prints their sum, their difference, and their product. This program will help to familiarize you with C++ developer tools, types and variables, and the \texttt{iostream} library.
+
+\section*{Requirements}
+
+\begin{enumerate}
+	\item The program should:
+	\begin{enumerate}
+		\item Accept exactly two integers, $a$ and $b$, from standard input.
+		\item Compute the sum ($a+b$), the difference ($a-b$), and the product ($a\times b$) of the two numbers.
+		\item Output results according to the format shown in the sample output.
+	\end{enumerate}
+\end{enumerate}
+
+\section*{Submission}
+
+\noindent
+Please submit a single C++ file (named \texttt{calculator.cpp}) with your solution.
+
+\section*{Sample Output}
+
+\begin{center}
+	
+\begin{multicols}{3}
+\begin{verbatim}
+	>> ./calculator
+	4
+	3
+	a + b = 7
+	a - b = 1
+	a * b = 12
+\end{verbatim}
+\columnbreak
+\begin{verbatim}
+	>> ./calculator
+	5
+	-1
+	a + b = 4
+	a - b = 6
+	a * b = -5
+\end{verbatim}
+\columnbreak
+\begin{verbatim}
+	>> ./calculator
+	9234
+	52340
+	a + b = 61574
+	a - b = -43106
+	a * b = 483307560
+\end{verbatim}
+\end{multicols}
+\end{center}
+
+\end{document}
