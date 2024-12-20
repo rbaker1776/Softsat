@@ -1,0 +1,111 @@
+\documentclass{article}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{amsmath}
+
+\definecolor{JadeGreen}{RGB}{91,158,62}
+\lstdefinestyle{catppuccin}{
+	backgroundcolor=\color{White},
+	commentstyle=\color{Gray},
+	numberstyle=\footnotesize\ttfamily\color{Gray},
+	stringstyle=\color{JadeGreen},
+	keywordstyle=\color{BurntOrange},
+	basicstyle=\ttfamily\footnotesize\color{Black},
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+}
+\lstset{style=catppuccin}
+
+\title{Software Saturday Lecture 2}
+\author{Ryan Baker}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\subsection*{Lecture Objectives}
+
+\begin{itemize}
+	\item Understand and use control structures (\texttt{if}, \texttt{switch}, loops)
+	\item Define and call functions in C++
+	\item Understand the concept of scope (local, global)
+	\item Introduce arrays and basic array operations
+	\item Use functions to produce maintainable code
+\end{itemize}
+
+\section{Control Structures}
+
+	\subsection{\texttt{if} and \texttt{else} statements } \begin{itemize}
+		\item The \texttt{if} statement is used to execute a block of code conditionally
+		\item The \texttt{else} statement allows you to define an alternative
+		\lstinputlisting[language=C++]{if.cpp}
+		\item Use of \texttt{\{\}} to define the blocks (not needed  for 1-line blocks)
+		\item Chaining statements together into \texttt{if () \{\} else if () \{\}}$\dots$
+	\end{itemize}
+	\subsection{\texttt{switch} statement} \begin{itemize}
+		\item A \texttt{switch} statement evaluates and executes the corresponding \texttt{case}
+		\item If no \texttt{case} matches, \texttt{default} is executed
+		\lstinputlisting[language=C++]{switch.cpp}
+		\item If the \texttt{break} statements aren't used, all blocks below will execute \begin{itemize}
+			\item Sometimes, but rarely, this is desired
+		\end{itemize}
+	\end{itemize}
+	
+\subsection{Loops}
+
+\subsubsection{\texttt{for} loops}
+
+\begin{itemize}
+	\item Used when you know how many times you need to repeat a block of code
+	\item \texttt{// for (initialization; break condition; update) \{...\}}
+	\lstinputlisting[language=C++]{for.cpp}
+\end{itemize}
+
+\subsubsection{\texttt{while} loops}
+
+\begin{itemize}
+	\item Used when you need a block to run until a condition is met
+	\item \texttt{// while (condition) \{...\}}
+	\lstinputlisting[language=C++]{while.cpp}
+	\item \texttt{do \{\} while ()} loops \begin{itemize}
+		\item Variation of \texttt{while} loops
+		\item Runs the block first, performs condition check second
+		\item As opposed to \texttt{while} which checks condition first and runs second
+		\lstinputlisting[language=C++]{dowhile.cpp}
+	\end{itemize}
+\end{itemize}
+
+\section{Functions}
+
+\begin{itemize}
+	\item Functions allow you to group statements into a reusable block
+	\item This helps in reducing code repetition and organizing the program
+	\item Defining functions: \texttt{type name(arguments) \{...\}} \begin{itemize}
+		\item \texttt{type} is the return type of the function (\texttt{int}, \texttt{char}, \texttt{void}, ...)
+		\item The function arguments are optional (can take 0 arguments)
+		\item The function body \texttt{\{...\}} contains the statements that will run
+	\end{itemize}
+	\item Calling functions: \texttt{name(arguments)}
+	\lstinputlisting[language=C++]{function.cpp}
+	\item Function overloading \begin{itemize}
+		\item C++ allows you to define multiple functions with the same name
+		\item They must have different arguments
+		\lstinputlisting[language=C++]{overload.cpp}
+	\end{itemize}
+\end{itemize}
+
+\
+
+\end{document}
