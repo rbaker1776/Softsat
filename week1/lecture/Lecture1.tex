@@ -1,0 +1,305 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+
+\title{``Hello, World!'': Under the Hood}
+\author{Ryan Baker}
+\date{\today}
+
+\definecolor{JadeGreen}{RGB}{91,158,62}
+\lstdefinestyle{catppuccin}{
+	backgroundcolor=\color{White},
+	commentstyle=\color{Gray},
+	numberstyle=\footnotesize\ttfamily\color{Gray},
+	stringstyle=\color{JadeGreen},
+	keywordstyle=\color{BurntOrange},
+	basicstyle=\ttfamily\footnotesize\color{Black},
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+}
+\lstset{style=catppuccin}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\subsection*{Lecture Objectives}
+
+\noindent
+By the end of this lecture, you should:
+
+\begin{enumerate}
+	\item Understand the developer tools needed to write C++
+	\item Be able to utilize types, arithmetic, and I/O to write a basic C++ program
+	\item Understand the C++ build process: preprocessing, compilation, linking
+\end{enumerate}
+
+\section{Introduction to C++}
+
+\begin{itemize}
+	\item What is C++? \begin{itemize}
+		\item General-purpose programming language
+		\item \textbf{Brief history:} Development, standardization, updates
+		\item \textbf{Use cases:} embedded systems, HFT, OS, etc.
+	\end{itemize}
+	\item Why learn C++? \begin{itemize}
+		\item There has been a concerted effort to push C++ to the side \begin{itemize}
+			\item Some valid concerns (some invalid)
+			\item We will investigate throughout the course
+		\end{itemize}
+		\item Performance, flexibility, power (sharpest tool in the toolbox)
+		\item C++ has a very strong ``knowledge passport'' \begin{itemize}
+			\item Becoming proficient at C++ is not easy
+			\item Proficiency in C++ translates very well to other languages
+		\end{itemize}
+		\item Is C++ dying? \begin{itemize}
+			\item Maybe.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\section{C++ Developer Tools}
+
+\noindent
+Two basic tools needed to build C++ projects: a \textbf{text editor} and a \textbf{compiler}
+
+\subsection{Text Editor}
+
+\begin{itemize}
+	\item What is a text editor? A tool to edit text.
+	\item Which text editor should I use? \begin{itemize}
+		\item \textbf{Visual Studio Code:} a beginner-friendly option (\href{https://code.visualstudio.com}{download here})
+		\item \textbf{CLion:} Comprehensive IDE made by JetBrains (\href{https://www.jetbrains.com/clion/}{download here})
+		\item \textbf{Vim/Nvim:} My choice, steep learning curve, more rewarding \begin{itemize}
+			\item Download instructions depend on your operating system
+			\item Look up ``vim install'' or ``neovim install''
+			\item I recommend spending some time configuring your setup, feel free to talk to me for recommendations
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Compiler}
+
+\begin{itemize}
+	\item What is a compiler? \begin{itemize}
+		\item A compiler is a tool that turns your code into an executable program
+		\item Performs lexical analysis, syntax checking, and optimization
+	\end{itemize}
+	\item Which compiler should I use?
+	\begin{itemize}
+		\item \textbf{gcc/g++:} One of the best. Download depends on OS
+		\item \textbf{clang/llvm:} My personal choice. Download depends on OS
+		\item \textbf{MSVC:} Microsoft visual compiler, a tier below \textbf{clang} and \textbf{gcc} (IMO)
+		\begin{itemize}
+			\item An easy option if you're developing on windows
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Hello World}
+
+\noindent
+With your text editor of choice, write the following code:
+
+\lstinputlisting[language=C++]{helloworld.cpp}
+
+\noindent
+Compile your code using your compiler of choice:
+
+\begin{verbatim}
+	>> clang++ helloworld.cpp -o exe
+	>> g++ helloworld.cpp -o exe
+\end{verbatim}
+
+\noindent
+These commands will compile \texttt{helloworld.cpp} and output an executable \texttt{exe}. You can run the executable file:
+
+\begin{verbatim}
+	>> ./exe
+	Hello, World!
+\end{verbatim}
+
+\noindent
+The remainder of this lecture will be spent on understanding the process that transforms \texttt{helloworld.cpp} into an executable that prints ``\texttt{Hello, World!}''.
+
+\section{The C++ Build Process}
+
+\noindent
+How do we get from the \texttt{.cpp} file to an executable program? Answering this question will allow us to understand and debug our programs more efficiently.
+
+\subsection{Source Code}
+
+\begin{itemize}
+	\item \textbf{Source code:} Human-readable code written in \texttt{.cpp} files
+	\item $\texttt{main.cpp}\rightarrow\boxed{\textrm{Preprocessor}}\rightarrow\boxed{\textrm{Compiler}}\rightarrow\boxed{\textrm{Linker}}\rightarrow\texttt{main.exe}$
+	\item \textbf{Example:} Compile and run ``Hello, World!'' in C++
+	\item \textbf{Key point:} Source code is essentially just a text file: \begin{itemize}
+		\item \texttt{cp helloworld.cpp ryan.baker}
+		\item \texttt{clang++ -x c++ ryan.baker -o exe \&\& ./exe}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Preprocessor}
+
+\begin{itemize}
+	\item What does the preprocessor do? \begin{itemize}
+		\item Text substitution: \texttt{\#define MAX 500} replaces ``\texttt{MAX}'' with ``\texttt{500}''
+		\item File inclusion: \texttt{\#include <iostream>} copies and pastes \texttt{iostream}
+		\begin{itemize}
+			\item \texttt{\#include "filename"}: searches current folder, use for local files
+			\item \texttt{\#include <filename>}: searches standard include directories
+		\end{itemize}
+		\item Conditional compilation: \texttt{\#if} and others to select code that compiles
+		\lstinputlisting[language=C++]{preprocessor.cpp}
+	\end{itemize}
+	\item \textit{Probably won't discuss} \texttt{\#pragma}
+	\begin{itemize}
+		\item Less relevant in C++ than in C, usually bad practice
+	\end{itemize}
+	\item Use of \texttt{-E} to view preprocessor output \begin{itemize}
+		\item \texttt{clang++ -E preprocessor.cpp > preprocessor\_output.cpp} \begin{itemize}
+			\item \texttt{iostream} file has been copied and pasted in
+			\item macros \texttt{MAX} and \texttt{STATUS} have been expanded to their values
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{Key point:} \texttt{preprocessor\_output.cpp} is the same as \texttt{preprocessor.cpp} \begin{itemize}
+		\item \texttt{clang++ preprocessor\_output.cpp -o exe \&\& ./exe}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Compiler}
+
+\begin{itemize}
+	\item What does the compiler do? \begin{itemize}
+		\item Reads the output of the preprocessor and turns it to machine code
+		\item Responsible for alerting the user about various types of errors
+		\item Outputs object files (\texttt{.o} or \texttt{.obj}) \begin{itemize}
+			\item Contains some directives for the linker to use
+		\end{itemize}
+	\end{itemize}
+	\item Use of \texttt{-c} to view the object file (completely unreadable)\begin{itemize}
+		\item \texttt{-c} stands for ``just compile'' (don't link)
+		\item \texttt{clang++ -c helloworld.cpp} produces \texttt{helloworld.o}
+		\item \texttt{clang++ helloworld.o -o exe \&\& ./exe} runs the program
+	\end{itemize}
+	\item Use of \texttt{-S} to view the assembly output (readable)\begin{itemize}
+		\item \texttt{clang++ -S helloworld.cpp} produces \texttt{helloworld.s}
+		\item Contains traces of our original program
+		\item \texttt{clang++ helloworld.s -o exe \&\& ./exe} runs the program
+	\end{itemize}
+\end{itemize}
+
+\subsection{Linker}
+
+\begin{itemize}
+	\item What does the linker do? \begin{itemize}
+		\item Resolves symbols, matching declarations to definitions
+		\item Combines multiple translation units into an executable
+		\item This allows us to write code across files, enhancing modularity
+	\end{itemize}
+\end{itemize}
+
+\lstinputlisting[language=C++]{file2.hpp}
+\lstinputlisting[language=C++]{file1.cpp}
+\lstinputlisting[language=C++]{file2.cpp}
+
+\begin{itemize}
+	\item \textbf{Key point:} \texttt{clang++ file1.cpp -o exe} produces a linker error \begin{itemize}
+		\item The symbol ``\texttt{greet()}'' is not defined
+		\item Recognize the difference between compilation and linking errors \begin{itemize}
+			\item Linker errors are often more convoluted
+			\item Often denoted by ``\texttt{ld:}'' or ``\texttt{linker error:}'' 
+		\end{itemize}
+	\end{itemize}
+	\item \texttt{clang++ file1.cpp file2.cpp -o exe} \begin{itemize}
+		\item We need to pass in \texttt{file2.cpp} to the linker
+	\end{itemize}
+\end{itemize}
+
+\subsection{Executable}
+
+\noindent
+We will discuss the structure of an executable in later weeks. More specifically, we will discuss the memory segmentation and management process.
+
+\section{C++ Programming Basics}
+
+\subsection{Types and Variables}
+
+\noindent
+All programming has to do with the storage and manipulation of data. To store a piece of data, we put it in to a variable. The ``type'' of the data, or the datatype, refers to the set of values that data can hold. For example, a character datatype can represent letters `a' through `z', while a boolean datatype can represent states `true' and `false'.
+
+\vspace{1em}	
+	\noindent
+	C++ has some built-in datatypes, called primitive or integral datatypes. Each datatype is designed to serve a different purpose. However, with a low-level programming language such as C++, the only real difference between any of these datatypes is the amount of memory they occupy.
+\begin{itemize}
+	\item \texttt{int}: represents an integer
+		\begin{itemize}
+			\item \texttt{int x = 42;} assigns the value 42 to a variable `x'
+			\item \texttt{sizeof(x); sizeof(int)} returns the \# of bytes `x' occupies
+			\item Because `x' occupies a finite number of bytes, its range is limited
+			\begin{itemize}
+				\item We can calculate its total range as $2^w$ where $w$ represents the width of `x' in bits
+				\item Note that the maximum value may be halved if `x' is signed
+			\end{itemize}
+			\item If we want a smaller int, we use \texttt{short}. If we want a longer int, we can use \texttt{long} or \texttt{long long}
+			\begin{itemize}
+				\item I find these names very confusing
+				\item I recommend \texttt{\#include <cstdint>}
+			\end{itemize}
+			\item Signedness: we can prepend a `u` or \texttt{unsigned} to the type to make the number unsigned. This expands its positive range
+		\end{itemize}
+		\item \texttt{char}: represents a character
+		\begin{itemize}
+			\item \texttt{char letter = 'a';} assigns 'a' to 'letter'
+				\begin{itemize}
+					\item \texttt{'a'} is really just a number
+					\item \texttt{int x = 'a'; std::cout << x << std::endl;}
+				\end{itemize}
+		\end{itemize}
+		\item \texttt{float}: represents a floating-point (fractional) type
+		\item \texttt{bool}: represents a boolean value (True or False)
+		\item \texttt{void}: represents ``no type''
+	\end{itemize}
+
+\subsection{Input and Output with \texttt{iostream}}
+
+\noindent
+Our programs are useless unless we can communicate with them. C++ provides various methods of passing data into and extracting data from our programs.
+
+\noindent
+The \texttt{iostream} library is the most widely used library for entering and printing data in C++.
+
+\begin{itemize}
+	\item ``\texttt{iostream}'' stands for input and output (IO) stream
+	\begin{itemize}
+		\item \texttt{\#include <iostream>}
+	\end{itemize}
+	\item Output with \texttt{iostream}
+	\begin{itemize}
+		\item \texttt{std::cout} is used to print data to the console
+		\item \texttt{std::endl} is used to output a newline and flush the buffer
+		\item The `\texttt{<<}' operator is the output stream operator
+	\end{itemize}
+	\item Input with \texttt{iostream}
+	\begin{itemize}
+		\item \texttt{std::cin} is used to fetch data at runtime from the user
+		\item The `\texttt{>>}' operator is the stream input operator
+	\end{itemize}
+\end{itemize}
+
+\lstinputlisting[language=C++]{iostreamio.cpp}
+
+\end{document}
