@@ -1,0 +1,143 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+
+\title{}
+\author{Ryan Baker}
+\date{\today}
+
+\definecolor{JadeGreen}{RGB}{91,158,62}
+\lstdefinestyle{catppuccin}{
+	backgroundcolor=\color{White},
+	commentstyle=\color{Gray},
+	numberstyle=\footnotesize\ttfamily\color{Gray},
+	stringstyle=\color{JadeGreen},
+	keywordstyle=\color{BurntOrange},
+	basicstyle=\ttfamily\footnotesize\color{Black},
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+}
+\lstset{style=catppuccin}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\subsection*{Lecture Objectives}
+
+\section{Functions}
+
+\begin{itemize}
+	\item What is a function?
+	\begin{itemize}
+		\item In programming, a function is a reusable block of code
+		\item It (optionally) takes input and (optionally) returns an output
+	\end{itemize}
+	\item Why use functions?
+	\begin{itemize}
+		\item We often want to repeat the same behavior on different pieces of data
+		\item Rather than pasting the same code many times, we use a function
+		\begin{itemize}
+			\item Functions help to keep code maintainable and readable
+		\end{itemize}
+		\item There is a balance to strike when extracting code into functions
+		\begin{itemize}
+			\item Too few functions results in long and repetitive code
+			\item Too many functions will result in sub-optimal performance and a code base that is very hard to read \begin{itemize}
+				\item Every time a function is called a new frame needs to be pushed to the stack and we jump around the executable
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\item How to define a function: \textbf{type name(arguments)}
+	\begin{itemize}
+		\item \textbf{type}: The return type of the function (can be \texttt{void})
+		\item \textbf{name}: The function's name
+		\item \textbf{arguments}: The input arguments to a function
+		\begin{itemize}
+			\item Specified as \textbf{type name} in a comma seperated list
+			\item \textbf{Example}: \texttt{int add(int a, int b, int c) \{...\}}
+		\end{itemize}
+		\item Together, the function's name and arguments make up the signature
+	\end{itemize}
+	\item How to call a function: \texttt{name(arguments)}
+	\begin{itemize}
+	\item \textbf{Example}: \texttt{int sum = add(1, 2, 3); // sum = 6}
+	\end{itemize}
+	\lstinputlisting[language=C++]{function.cpp}
+\end{itemize}
+
+\section{Conditions and Branches}
+
+\noindent
+Often times, we want to evaluate a certain condition, and, depending on the result, decide which code to execute.
+
+\begin{itemize}
+	\item What is branching?
+	\begin{itemize}
+		\item Branching is when we jump, or ``branch'' to another part of our code depending on the result of some conditional
+		\item The computer has to load a new part of the executable to memory
+	\end{itemize}
+	\item Conditional statements
+	\begin{itemize}
+		\item Conditional statements are expressions that return a \textit{boolean} value
+		\item Often in C++, we use comparison operators to form conditionals
+		\begin{itemize}
+			\item \texttt{==}: returns true if the arguments are equal (\texttt{a == b})
+			\item \texttt{!=}: returns true if the arguments aren't equal (\texttt{a != b})
+			\item \texttt{<}: true if left operand is less than right operand (\texttt{a < b})
+			\item \texttt{>}: true if left operand is greater than right operand	 (\texttt{a > b})
+			\item \texttt{<=}: true if left operand is less than or equal to right operand
+			\item \texttt{>}: true if left operand is greater than or equal to right operand	
+			\item \texttt{bool(x)}: returns true if \texttt{x != 0}
+		\end{itemize}
+		\lstinputlisting[language=C++]{conditional.cpp}
+	\end{itemize}
+\end{itemize}
+
+\subsection{\texttt{if} statements}
+
+\begin{itemize}
+	\item \texttt{if} statement syntax: \texttt{if (condition) \{...\}}
+	\begin{itemize}
+		\item Only executes the code within \texttt{\{...\}} if the condition is true
+	\end{itemize}
+	\item \texttt{else} statements: \texttt{if (condition) \{...\} else \{...\}}
+	\begin{itemize}
+		\item Executes the first block if the condition is true, else the second block
+	\end{itemize}
+	\item \texttt{\{\}} is not strictly required if the block is one line
+	\lstinputlisting[language=C++]{ifelse.cpp}
+	\item Chaining \texttt{if} and \texttt{else} statements:
+	\lstinputlisting[language=C++]{elseif.cpp}
+\end{itemize}
+
+\subsection{\texttt{switch} statements}
+
+\begin{itemize}
+	\item Switch statements jump to a case depending on the result of the expression
+	\item \texttt{switch} statement syntax: \texttt{switch (expression) \{ cases... \}}
+	\lstinputlisting[language=c++]{switch.cpp}
+	\item If no \texttt{case} evaluates to true, the \texttt{default} case is executed
+	\item Without \texttt{break} statements, every case below will also execute
+\end{itemize}
+
+\section{Loops}
+
+\subsection{\texttt{for} loops}
+
+\subsection{\texttt{while} loops}
+
+\end{document}
