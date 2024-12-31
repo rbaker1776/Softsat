@@ -3,7 +3,7 @@
 wd=$(pwd)
 cd /Users/ryanbaker/softsat/
 
-for i in $(seq 1 2); do
+for i in $(seq 1 3); do
     cd week$i/lecture/
     pdflatex -output-directory=build -interaction=nonstopmode Lecture$i.tex
     cd ../../

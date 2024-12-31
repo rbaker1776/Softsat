@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  31 DEC 2024 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  31 DEC 2024 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,13 +345,13 @@ Package hyperref Info: Link coloring OFF on input line 45.
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-81.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 81.
+91.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 91.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 81.
+(Font)              for symbol `textbraceleft' on input line 91.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
@@ -363,17 +363,17 @@ File: lstlang1.sty 2024/02/21 1.10 listings language file
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 89.
+nput line 99.
 
-(./code/function.cpp) [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-
-super/cm-super-ts1.enc}] (./code/scope.cpp) [3] (./code/boolean.cpp)
+(./code/function.cpp [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-s
+uper/cm-super-ts1.enc}]) (./code/scope.cpp [3]) (./code/boolean.cpp [4])
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 165.
- [4]
-(./code/ifelse.cpp) (./code/elseif.cpp) [5] (./code/ternary.cpp)
-(./code/switch.cpp [6]) (./code/while.cpp) [7] (./code/dowhile.cpp)
-(./code/for.cpp) [8] (./code/break.cpp) (./code/break.cpp) (./code/return.cpp
-[9]) (./code/goto.cpp) [10] (build/Lecture2.aux)
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 175.
+
+(./code/ifelse.cpp) (./code/elseif.cpp [5]) (./code/ternary.cpp)
+(./code/switch.cpp [6]) (./code/while.cpp [7]) (./code/dowhile.cpp)
+(./code/for.cpp [8]) (./code/break.cpp) (./code/break.cpp [9])
+(./code/return.cpp) (./code/goto.cpp) [10] (build/Lecture2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -386,13 +386,13 @@ Package rerunfilecheck Info: File `Lecture2.out' has not changed.
 (rerunfilecheck)             Checksum: 1B252A35544F02CBE3B2D02F59C2D3F6;1853.
  ) 
 Here is how much of TeX's memory you used:
- 11413 strings out of 474116
- 170737 string characters out of 5743681
- 2149187 words of memory out of 5000000
+ 11414 strings out of 474116
+ 170747 string characters out of 5743681
+ 2152187 words of memory out of 5000000
  33360 multiletter control sequences out of 15000+600000
  564974 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,340b,2145s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,340b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -405,10 +405,10 @@ al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/loca
 l/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/t
 exlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on build/Lecture2.pdf (10 pages, 176556 bytes).
+Output written on build/Lecture2.pdf (10 pages, 177071 bytes).
 PDF statistics:
- 483 PDF objects out of 1000 (max. 8388607)
- 442 compressed objects within 5 object streams
- 263 named destinations out of 1000 (max. 500000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 443 compressed objects within 5 object streams
+ 264 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
