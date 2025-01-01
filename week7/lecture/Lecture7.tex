@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{amsmath}
+
+\title{\input{../title.tex}}
+\author{Ryan Baker}
+\date{\today}
+
+\definecolor{JadeGreen}{RGB}{91,158,62}
+\lstdefinestyle{catppuccin}{
+	backgroundcolor=\color{White},
+	commentstyle=\color{Gray},
+	numberstyle=\footnotesize\ttfamily\color{Gray},
+	stringstyle=\color{JadeGreen},
+	keywordstyle=\color{BurntOrange},
+	basicstyle=\ttfamily\footnotesize\color{Black},
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+}
+\lstset{style=catppuccin}
+
+\hypersetup{
+	colorlinks=true,
+	hidelinks=false,
+	linkcolor=RoyalBlue,
+	citecolor=ForestGreen,
+	filecolor=DarkOrchid,
+	urlcolor=BurntOrange,
+	runcolor=BrickRed,
+	pdftitle={C++: From Code to Execution},
+	pdfauthor={Ryan Baker},
+}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Compile-time Programming}
+
+\section{Lambdas}
+
+\section{Streams}
+
+\end{document}
