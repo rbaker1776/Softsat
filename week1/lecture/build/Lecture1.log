@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  3 JAN 2025 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  3 JAN 2025 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -364,60 +364,37 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `Lecture1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Lecture1.out':
-(rerunfilecheck)             Before: 6C9E35C4E83AB53ED679D9F8CB15FBCE;5144
-(rerunfilecheck)             After:  6F78A36E698CDE6539D9C0C01986C81D;4985.
+Package rerunfilecheck Info: File `Lecture1.out' has not changed.
+(rerunfilecheck)             Checksum: 6F78A36E698CDE6539D9C0C01986C81D;4985.
  ) 
 Here is how much of TeX's memory you used:
- 10669 strings out of 474116
- 160764 string characters out of 5743681
+ 10666 strings out of 474116
+ 160699 string characters out of 5743681
  1978187 words of memory out of 5000000
- 32833 multiletter control sequences out of 15000+600000
+ 32834 multiletter control sequences out of 15000+600000
  563863 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,16n,82p,673b,1351s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsubsection.5.2.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.2.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
-al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/tex
-live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
-ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
-e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/
-2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/202
-4/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on build/Lecture1.pdf (9 pages, 211270 bytes).
+ 80i,16n,82p,492b,1351s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
+/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2
+024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on build/Lecture1.pdf (9 pages, 211268 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 94 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 337 PDF objects out of 1000 (max. 8388607)
+ 291 compressed objects within 3 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
