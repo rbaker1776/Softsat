@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  2 JAN 2025 22:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  3 JAN 2025 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,78 +293,90 @@ File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 \tf@toc=\write4
 \openout4 = `Lecture1.toc'.
 
+ [1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 44.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 44.
+(hyperref)                removing `\lstinline' on input line 103.
+
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lstinline' on input line 119.
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lstinline' on input line 166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 48.
+(hyperref)                removing `\lstinline' on input line 166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 58.
+(hyperref)                removing `\lstinline' on input line 166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 58.
+(hyperref)                removing `\lstinline' on input line 166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 58.
+(hyperref)                removing `\lstinline' on input line 166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 58.
+(hyperref)                removing `\lstinline' on input line 196.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 58.
+(hyperref)                removing `\lstinline' on input line 200.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 60.
+(hyperref)                removing `\lstinline' on input line 202.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 64.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lstinline' on input line 66.
-
-[1
-
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] (build/Lecture1.aux)
+[5] [6] (build/Lecture1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Lecture1.out' has not changed.
-(rerunfilecheck)             Checksum: DED130AD28D25F5BBE3B7B1D23C243F2;5149.
+(rerunfilecheck)             Checksum: 6C9E35C4E83AB53ED679D9F8CB15FBCE;5144.
  ) 
 Here is how much of TeX's memory you used:
- 10367 strings out of 474116
- 156711 string characters out of 5743681
- 1950187 words of memory out of 5000000
- 32607 multiletter control sequences out of 15000+600000
- 562492 words of font info for 51 fonts, out of 8000000 for 9000
+ 10423 strings out of 474116
+ 157445 string characters out of 5743681
+ 1963187 words of memory out of 5000000
+ 32634 multiletter control sequences out of 15000+600000
+ 563694 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,6n,82p,673b,1273s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,6n,82p,673b,1958s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/Lecture1.pdf (2 pages, 95825 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/
+2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on build/Lecture1.pdf (6 pages, 192497 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
  209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
