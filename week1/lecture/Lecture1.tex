@@ -23,19 +23,78 @@
 
 \subsection{Evolution of C++}
 
-\subsection{The C++ Methodology}
+\noindent
+C++ was developed in 1979 by Bjarne Stroustrup as a simple extension of C. Since then, it has evolved into a modern multi-paradigm language with major updates every three years (C++26 is on its way). Each update introduces features for better performance, safety, flexibility, and developer experience. 
+
+\subsection{The C++ Philosophy}
+
+\noindent
+C++ is a sharp tool. It prioritizes manual control over all else, allowing for direct memory manipulation and fine-grained resource management. The philosophy is to give the developer the tools for flexibility and performance, but with the responsibility to manage complexity.
 
 \subsection{C++ vs. Other Languages}
+
+\paragraph{Compiled vs. Interpreted}
+C++ is a \textit{compiled} language, meaning the source code is translated into machine code before it is executed. This allows for a faster run time and more control over hardware aspects. This contrasts with \textit{interpreted} languages, like Python, translated and executed line by line. Interpreted languages tend to be quicker to develop and easier to use.
+
+\paragraph{Strongly Typed}
+Strongly typed languages, such as C++, require the explicit specification of datatypes and enforce type assignments at compile and run time. This makes it harder to make type mistakes and promotes code stability.
+
+\paragraph{Multi-Paridigm}
+A programming paradigm is a high-level way to structure and conceptualize your program. Some languages enforce a certain paradigm, such as procedural programming or object-oriented programming, but not C++. C++ supports multiple programming paradigms, awarding more freedom to the programmer.
 
 \section{Environment Setup}
 
 \subsection{Tools Required}
 
+\noindent
+To develop C++, you need two basic tools: a \textbf{text editor} and a \textbf{compiler}.
+
 \subsubsection{Text Editor}
+
+\begin{itemize}
+	\item What is a text editor? A tool at edits text. \inlinecpp{// duh}
+	\item \textbf{Text Editor vs. IDE:} A text editor is a basic tool for writing plain text, while an IDE (Integrated Development Environment) is a more comprehensive tool that includes a code editor, debugging tools, code completion, an build automation.
+	\item Some popular text editors include:
+	\begin{itemize}
+		\item \textbf{Visual Studio Code:} A free, open-source IDE with support for C++ through extensions.
+		\item \textbf{CLion:} An IDE specifically built for C++ with advanced features.
+		\item \textbf{Vim/Neovim:} My personal choice. Has a steep learning curve, but absolutely worth it.
+		\begin{itemize}
+			\item If you decide to go with Vim or Neovim, I recommend spending some time configuring your setup. Feel free to ask me for help.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 
 \subsubsection{Compiler}
 
+\begin{itemize}
+	\item \textbf{Definition:} The compiler converts your C++ source code into machine-readable instructions.
+	\item Common C++ compilers include:
+	\begin{itemize}
+		\item \textbf{gcc:} The GNU Compiler Collection, a popular open-source compiler. Best for Windows OS and Linux.
+		\item \textbf{clang:} My personal favorite, known for its performance and diagnostics. Best for Mac OS.
+		\item \textbf{MSVC:} An increasingly irrelevant piece of garbage. Second best for Windows.
+	\end{itemize}
+	\item Throughout the lecture series, I will be using \texttt{clang}. If a certain \texttt{clang} flag or directive does not work for your compiler, simply look up its equivalent.
+\end{itemize}
+
 \subsection{``Hello, World!'' Example}
+
+\noindent
+With your text editor of choice, write the following C++ program:
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+
+int main()
+{
+	std::cout << "Hello, World!" << std::endl;
+	return 0;
+}
+\end{lstlisting}
+
+\noindent
+Compile and run the program with your compiler of choice. You should see ``Hello, World!'' printed to the console.
 
 \section{Basic Syntax and Structure}
 
@@ -43,11 +102,57 @@
 
 \subsubsection{\inlinecpp{int main()}}
 
+\begin{itemize}
+	\item \textbf{Entry Point:} The \inlinecpp{main()} function is where every C++ program starts executing. It serves as the ``entry point'' for a program.
+	\item \textbf{Return Value:} \inlinecpp{main()} returns an integer to indicate the program's exit status. By convention, returning \inlinecpp{0} means successful execution.
+	\begin{itemize}
+		\item In modern C++, \inlinecpp{return 0} is implicit
+	\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}[language=C++]
+int main() {} // the shortest complete C++ program
+\end{lstlisting}
+
 \subsection{Foundational Concepts}
 
 \subsubsection{Semicolons, \inlinecpp{/* comments */}, and Whitespace}
 
+\begin{itemize}
+	\item \textbf{Semicolons:} Every statement in C++ ends with a semicolon:
+	\centercpp{std::cout << "Hello, World!" << std::endl;}
+	\begin{itemize}
+		\item This lets the compiler know that the line is finished
+	\end{itemize}
+	\item \textbf{Comments:} Comments are a way of ``taking notes'' within your code. They are ignored by the compiler entirely, but help you and other developers understand the code.
+	\item There are two ways of writing comments:
+	\begin{itemize}
+		\item \textbf{Single Line:} Single line comments are prefixed with \inlinecpp{//}:
+		\centercpp{int main() // main function serves as the entry point}
+		\item \textbf{Block:} Block comments are written with \inlinecpp{/* */} notation:
+		\centercpp{int /* why is there a comment here? */ main()}
+		\item \textsl{Ryan's Advice:} Lightly prefer \inlinecpp{//} to \inlinecpp{/* */} because the parsing of \inlinecpp{/* */} is more complicated and can lead to errors if you aren't careful.
+	\end{itemize}
+	\item \textbf{Whitespace:} C++ could not care less about whitespace. Whitespace includes spaces, tabs, and newlines.
+	\begin{itemize}
+		\item This means that is its possible, although not generally recommended, to write a C++ program in one line of code:
+	\end{itemize}
+	\centercpp{int main() \{ std::cout << "Hello, World!" << std::endl; \}}
+\end{itemize}
+
 \subsubsection{Line-by-Line Execution}
+
+\noindent
+In C++, the program executes statement sequentially, starting from the top of \inlinecpp{main()} and moving downward.
+
+\begin{lstlisting}[language=C++]
+int main()
+{
+	std::cout << "First"  << std::endl;  // guaranteed
+	std::cout << "Second" << std::endl;  // to print
+	std::cout << "Third"  << std::endl;  // in order
+}
+\end{lstlisting}
 
 \subsection{Input and Output}
 
@@ -56,6 +161,36 @@
 \subsection{Primitive Types}
 
 \subsubsection{\inlinecpp{int}, \inlinecpp{char}, \inlinecpp{bool}, \inlinecpp{float}, \inlinecpp{void}} 
+
+\noindent
+When we're programming, all we are really doing is manipulating data. Data comes in many forms, shapes, and sizes, together forming a \textit{datatype}. C++ has several built-in datatypes, called primitive types:
+
+\begin{itemize}
+	\item[\textcolor{BurntOrange}{\texttt{int}}:] Used to store integer values (e.g., 5, -10, 42)
+	\begin{itemize}
+		\item Integers can be \textit{signed} (represent $\pm$) or \textit{unsigned} (only positive).		
+		\item Because a computer's memory is finite, so too is the range of an \inlinecpp{int}.
+		\begin{itemize}
+			\item The maximum value of an unsigned \inlinecpp{int} can be calculated as $2^w$ where $w$ is the width of the \inlinecpp{int} in bits. The minimum is 0.
+			\begin{itemize}
+				\item The range of a \inlinecpp{uint32_t} is $[0, 2^{32}-1]=[0, 4294967295]$
+			\end{itemize}
+			\item For signed integers, the maximum value is $2^{w-1}-1$ and the minimum value is $-2^{w-1}$ where $w$ is the width in bits.
+			\begin{itemize}
+				\item The range of an \inlinecpp{int32_t} is $[-2147483648, 2147483647]$
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\item[\textcolor{BurntOrange}{\texttt{char}}:] Used to store single characters (e.g., `a', `2')
+	\begin{itemize}
+		\item Characters are just integers in disguise. Every character has a corresponding integer value according to the \textbf{ASCII Table}.
+		\centercpp{std::cout << int('a') << std::endl; // 97}
+		\centercpp{std::cout << char(97) << std::endl; // `a'}
+	\end{itemize}
+	\item[\textcolor{BurntOrange}{\texttt{bool}}:] 
+	\item[\textcolor{BurntOrange}{\texttt{float}}:] 
+	\item[\textcolor{BurntOrange}{\texttt{void}}:] 
+\end{itemize}
 
 \subsubsection{\inlinecpp{sizeof} Operator}
 
