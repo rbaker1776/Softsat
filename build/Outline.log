@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  3 JAN 2025 11:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  3 JAN 2025 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -309,13 +309,13 @@ Package rerunfilecheck Info: File `Outline.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10481 strings out of 474116
- 159078 string characters out of 5743681
- 1939187 words of memory out of 5000000
- 32641 multiletter control sequences out of 15000+600000
+ 10478 strings out of 474116
+ 159048 string characters out of 5743681
+ 1940187 words of memory out of 5000000
+ 32639 multiletter control sequences out of 15000+600000
  562185 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,6n,82p,324b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,6n,82p,365b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{subsection.1.7} has been referenced but does not ex
 ist, replaced by a fixed one
@@ -359,10 +359,6 @@ ot exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{subsubsection.3.2.2} has been referenced but does n
 ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.4} has been referenced but does not ex
-ist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsection.3.4} has been referenced but does not ex
@@ -433,32 +429,24 @@ pdfTeX warning (dest): name{subsubsection.1.2.1} has been referenced but does n
 ot exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.1.2} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection.5.4} has been referenced but does not ex
 ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.5.3.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.5.3.1} has been referenced but does n
+ot exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsection.5.3} has been referenced but does not ex
 ist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsubsection.5.2.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.2.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
 pdfTeX warning (dest): name{subsection.5.2} has been referenced but does not ex
 ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.5.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsection.5.1} has been referenced but does not ex
@@ -483,6 +471,10 @@ ot exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{subsection.4.2} has been referenced but does not ex
 ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.1.2} has been referenced but does n
+ot exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsubsection.4.1.1} has been referenced but does n
@@ -533,6 +525,10 @@ pdfTeX warning (dest): name{section.2} has been referenced but does not exist,
 replaced by a fixed one
 
 
+pdfTeX warning (dest): name{subsection.1.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
 pdfTeX warning (dest): name{subsection.1.1} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -546,10 +542,10 @@ usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
 cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/Outline.pdf (10 pages, 108701 bytes).
+Output written on build/Outline.pdf (10 pages, 110890 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,7 @@
 \documentclass{article}
 
-\newcommand{\thistitle}{}
+\input{../../tex/titles.tex}
+\newcommand{\thistitle}{\titleeight}
 \newcommand{\me}{Ryan Baker}
 
 \input{../../tex/header.tex}
@@ -15,11 +16,34 @@
 \tableofcontents
 \pagebreak
 
+\section{Introduction to Templates}
+
+\noindent
+A \inlinecpp{template} is a \textit{very} powerful tool in C++. The basic idea is to use datatypes as parameters and have the compiler generate the relevant code for us. For example, you may want to write a function \inlinecpp{sort()} that works for different datatypes. Rather than writing and maintaining multiple \inlinecpp{sort()} functions, we can write a single \inlinecpp{sort() template} and pass the datatype as a parameter.
+
+\subsection{How Do Templates Work?}
+
+\noindent
+Templates are expanded at compile time similar to macros. The difference is that the compiler does type checking before template expansion.
+
 \section{Function Templates}
+
+\noindent
+
+
+\subsection{Implicit Template Deduction}
+
+\subsection{Template Function Overloading}
+
+\subsection{Function Template Specialization}
 
 \section{Class Templates}
 
-\section{Template Specialization}
+\subsection{Template Instantiation}
+
+\subsection{Class Template Specialization}
+
+\section{Non-Type Template Parameters}
 
 \section{Variadic Templates}
 
