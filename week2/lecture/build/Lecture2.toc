@@ -17,3 +17,7 @@
 \contentsline {subsubsection}{\numberline {2.2.1}\lstinline [language=C++]|NULL| Pointers}{7}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Pointer Arithmetic}{7}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Pointers to Pointers}{7}{subsubsection.2.2.3}%
+\contentsline {section}{\numberline {3}Memory Layout}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Text Segment}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Static Memory}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Heap}{8}{subsection.3.3}%

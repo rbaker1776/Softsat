@@ -37,7 +37,9 @@ for i in $(seq 1 9); do
     fi
 done
 
-rm Outline.pdf
+if [ -f Outline.pdf ]; then
+    rm Outline.pdf
+fi
 
 cd "$original_dir"
 
