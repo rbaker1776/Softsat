@@ -1,65 +1,63 @@
 \documentclass{article}
 
-\usepackage{hyperref}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{listings}
-\usepackage{amsmath}
+\newcommand{\thistitle}{Introduction to Modern C++ Course Outline}
+\newcommand{\me}{Ryan Baker}
 
-\title{Intro to Modern C++ Course Outline}
-\author{Ryan Baker}
+\input{tex/header.tex}
+\input{tex/titles.tex}
+
+\title{\thistitle}
+\author{\me}
 \date{\today}
-
-\definecolor{JadeGreen}{RGB}{91,158,62}
-\lstdefinestyle{catppuccin}{
-	backgroundcolor=\color{White},
-	commentstyle=\color{Gray},
-	numberstyle=\footnotesize\ttfamily\color{Gray},
-	stringstyle=\color{JadeGreen},
-	keywordstyle=\color{BurntOrange},
-	basicstyle=\ttfamily\footnotesize\color{Black},
-	breakatwhitespace=false,
-	breaklines=true,
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=4,
-}
-\lstset{style=catppuccin}
-
-\hypersetup{
-	colorlinks=true,
-	hidelinks=false,
-	linkcolor=RoyalBlue,
-	citecolor=ForestGreen,
-	filecolor=DarkOrchid,
-	urlcolor=BurntOrange,
-	runcolor=BrickRed,
-	pdftitle={C++: From Code to Execution},
-	pdfauthor={Ryan Baker},
-}
 
 \begin{document}
 
 \maketitle
-\contentsline{section}{Week \numberline {1:}\input{week1/title.tex}}{}{}
-\contentsline{section}{Week \numberline {2:}\input{week2/title.tex}}{}{}
-\contentsline{section}{Week \numberline {3:}\input{week3/title.tex}}{}{}
 \pagebreak
 
 \centering
-\section*{Week 1: \input{week1/title.tex}}	
+\section*{Week 1: \titleone}
 \input{week1/lecture/build/Lecture1.toc}
+\pagebreak
 
 \centering
-\section*{Week 2: \input{week2/title.tex}}	
+\section*{Week 2: \titletwo}
 \input{week2/lecture/build/Lecture2.toc}
+\pagebreak
 
 \centering
-\section*{Week 3: \input{week3/title.tex}}	
+\section*{Week 3: \titlethree}
 \input{week3/lecture/build/Lecture3.toc}
+\pagebreak
+
+\centering
+\section*{Week 4: \titlefour}
+\input{week4/lecture/build/Lecture4.toc}
+\pagebreak
+
+\centering
+\section*{Week 5: \titlefive}
+\input{week5/lecture/build/Lecture5.toc}
+\pagebreak
+
+\centering
+\section*{Week 6: \titlesix}
+\input{week6/lecture/build/Lecture6.toc}
+\pagebreak
+
+\centering
+\section*{Week 7: \titleseven}
+\input{week7/lecture/build/Lecture7.toc}
+\pagebreak
+
+\centering
+\section*{Week 8: \titleeight}
+\input{week8/lecture/build/Lecture8.toc}
+\pagebreak
+
+\centering
+\section*{Week 9: \titlenine}
+\input{week9/lecture/build/Lecture9.toc}
+\pagebreak
 
 \end{document}

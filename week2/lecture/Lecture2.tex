@@ -1,46 +1,14 @@
 \documentclass{article}
 
-\usepackage{hyperref}
-\usepackage{listings}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{amsmath}
+\input{../../tex/titles.tex}
+\newcommand{\thistitle}{\titletwo}
+\newcommand{\me}{Ryan Baker}
 
-\title{\input{../title.tex}}
-\author{Ryan Baker}
+\input{../../tex/header.tex}
+
+\title{\thistitle}
+\author{\me}
 \date{\today}
-
-\definecolor{JadeGreen}{RGB}{91,158,62}
-\lstdefinestyle{catppuccin}{
-	backgroundcolor=\color{White},
-	commentstyle=\color{Gray},
-	numberstyle=\footnotesize\ttfamily\color{Gray},
-	stringstyle=\color{JadeGreen},
-	keywordstyle=\color{BurntOrange},
-	basicstyle=\ttfamily\footnotesize\color{Black},
-	breakatwhitespace=false,
-	breaklines=true,
-	captionpos=b,
-	keepspaces=true,
-	numbers=left,
-	numbersep=5pt,
-	showspaces=false,
-	showstringspaces=false,
-	showtabs=false,
-	tabsize=4,
-}
-\lstset{style=catppuccin}
-
-\hypersetup{
-	colorlinks=true,
-	hidelinks=false,
-	linkcolor=RoyalBlue,
-	citecolor=ForestGreen,
-	filecolor=DarkOrchid,
-	urlcolor=BurntOrange,
-	runcolor=BrickRed,
-	pdftitle={C++: From Code to Execution},
-	pdfauthor={Ryan Baker},
-}
 
 \begin{document}
 
@@ -48,278 +16,54 @@
 \tableofcontents
 \pagebreak
 
-\subsection*{Lecture Objectives}
+\section{The Build Process}
 
-\noindent
-By the end of this lecture, you should:
-\begin{itemize}
-    \item Know how, and when, to use functions in C++
-    \item Be able to utilize control structures to write logical programs
-    \item Understand the notion of ``scope'', and how it affects visibility
-\end{itemize}
+\subsection{Source Code}
 
-\section{Functions}
+\subsection{Preprocessor}
 
-\begin{itemize}
-	\item What is a function?
-	\begin{itemize}
-		\item In programming, a function is a reusable block of code
-		\item It (optionally) takes input and (optionally) returns an output
-	\end{itemize}
-	\item Why use functions?
-	\begin{itemize}
-		\item We often want to repeat the same behavior on different pieces of data
-		\item Rather than pasting the same code many times, we use a function
-		\begin{itemize}
-			\item Functions help to keep code maintainable and readable
-		\end{itemize}
-		\item There is a balance to strike when extracting code into functions
-		\begin{itemize}
-			\item Too few functions results in long and repetitive code
-			\item Too many functions will result in sub-optimal performance and a code base that is very hard to read \begin{itemize}
-				\item Every time a function is called a new frame needs to be pushed to the stack and we jump around the executable
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
-	\item How to define a function: \texttt{<type> <name>(<arguments>)}
-	\begin{itemize}
-		\item \texttt{type:} The return type of the function (can be \texttt{void})
-		\item \texttt{name:} The function's name
-		\item \texttt{arguments:} The input arguments to a function
-		\begin{itemize}
-			\item Specified as \texttt{<datatype name>} in a comma separated list
-			\item \textbf{Example:} \texttt{int add(int a, int b, int c) \{...\}}
-		\end{itemize}
-		\item Together, the function's name and arguments make up the \textit{signature}
-	\end{itemize}
-	\item How to call a function: \texttt{<name>(<arguments>)}
-	\begin{itemize}
-	\item \textbf{Example:} \texttt{int sum = add(1, 2, 3); // sum = 6}
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/function.cpp}
-\end{itemize}
+\subsubsection{Text Substitution}
 
-\section{Scope}
+\subsubsection{Conditional Compilation}
 
-\noindent
-In C++, \textbf{scope} refers to the region of a program, where a variable or function is accessible.
+\subsubsection{File Inclusion}
 
-\begin{itemize}
-	\item How is scope defined?
-	\begin{itemize}
-		\item A scope is defined by curly braces: \texttt{\{...\}}
-		\item \texttt{...} is ``within scope'' and everything else is ``out of scope''
-	\end{itemize}
-	\item Types of scope:
-	\begin{itemize}
-		\item Global scope: Accessible from any part of the program
-		\begin{itemize}
-			\item Variables declared outside any function
-		\end{itemize}
-		\item Local scope: Accessible only within the same block (\texttt{\{...\}})
-		\begin{itemize}
-			\item Variables declared within functions
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
+\subsubsection{Preprocessor Output}
 
-\lstinputlisting[language=C++]{code/scope.cpp}
+\subsection{Compilation}
 
-\section{Conditions and Branches}
+\subsubsection{Compiler Output}
 
-\noindent
-Often times in programming, we need to perform different actions depending on some condition. For example, \textit{if} the user already has an account, \textit{then} show them the login screen. \textit{Else}, show them the account creation screen. Conditions and branches help us achieve behavior like this.
+\subsection{Linking}
 
-\subsection{Boolean Statements}
+\section{Introduction to Memory}
 
-\begin{itemize}
-	\item What is a Boolean statement?
-	\begin{itemize}
-		\item A \texttt{bool} type in C++ can either hold \texttt{true} or \texttt{false}
-		\item Therefore, a Boolean statement evaluates to \texttt{true} or \texttt{false}
-		\item They are often the inputs to conditional evaluation (for clear reasons)
-	\end{itemize}
-	\item How to create a Boolean statement:
-	\begin{itemize}
-		\item \texttt{bool(x):} casts \texttt{x} to a type \texttt{bool}
-		\begin{itemize}
-			\item For numeric types, returns \texttt{true} if \texttt{x} $\neq 0$, \texttt{false} if \texttt{x} $ = 0$
-			\item \texttt{bool(1) == true;    bool(-1) == true;    bool(0) == false}
-		\end{itemize}
-		\item Comparison operators: return a boolean based on the comparison
-		\begin{itemize}
-			\item \texttt{==}, \texttt{!=}, \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=} are all rather simple ($\texttt{a == b} \leftrightarrow a=b$)
-		\end{itemize}
-		\item Unary \texttt{!} operator: NOT operator
-		\begin{itemize}
-			\item \texttt{!true == false $\quad$ !false == true}
-			\item \texttt{!(5 == 6) == true $\quad$ !(0 == 0) == false}
-		\end{itemize}
-		\item Operator \texttt{\&\&}: AND operator
-		\begin{itemize}
-			\item The \textbf{and} operator, \texttt{\&\&} returns true if both operands are true
-			\item \texttt{(1 == 1) \&\& (0 == 0) == true}
-			\item \texttt{(1 > 0) \&\& (0 > 1) == false}
-		\end{itemize}
-		\item Operator \texttt{||}: OR operator
-		\begin{itemize}
-			\item The \textbf{or} operator, \texttt{||} returns true if either operand is true
-			\item \texttt{(1 == 1) || (1 == 0) == true}
-			\item \texttt{(1 < 0) || (0 > 1) == false}
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
+\subsection{How C++ Uses Memory}
 
-\lstinputlisting[language=C++]{code/boolean.cpp}
+\subsection{Pointers}
 
-\subsection{\texttt{if} Statements}
+\subsubsection{\inlinecpp{NULL} Pointers}
 
-\begin{itemize}
-	\item When to use an \texttt{if} statement:
-	\begin{itemize}
-		\item Use \texttt{if} statements when you want to run a block of code conditionally
-		\item \textbf{Example}: You only want to log a user in \textit{if} their password is correct
-	\end{itemize}
-	\item \texttt{if} statement syntax: \texttt{if (<expression>) \{...\}}
-	\begin{itemize}
-		\item Only executes the block of code (...) if the boolean expression is true
-	\end{itemize}
-	\item Use of \texttt{else} to provide an alternative:
-	\begin{itemize}
-		\item \texttt{if (<expression>) \{...\} else \{...\}}
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/ifelse.cpp}
-	\item Chaining \texttt{if} and \texttt{else} into \texttt{else if}
-	\begin{itemize}
-		\item \texttt{if (<expr1>) \{...\} else if (<expr2>) \{...\} else \{...\}}
-		\item \texttt{else if} is not a new keyword, rather an \texttt{if} within an \texttt{else}
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/elseif.cpp}
-	\item The overhead of \texttt{if} statements
-	\begin{itemize}
-		\item Every time an \texttt{if} statement is evaluated, the computer has to ``jump'' around the executable to the correct execution block
-		\item This entails an expensive load operation, making \texttt{if} statements relatively expensive
-		\item For these reasons, programmers often use ternary operator
-	\end{itemize}
-\end{itemize}
+\subsubsection{Pointer Arithmetic}
 
-\subsection{Ternary Operator}
+\subsubsection{Pointers to Pointers}
 
-\begin{itemize}
-	\item Ternary syntax: \texttt{(<expression>) ? (<if true>) : (<if false>)}
-	\item ``returns'' second argument (\texttt{<if true>}) if first argument (\texttt{<expression>}) is true, else ``returns'' third argument (\texttt{<if false>})
-	\lstinputlisting[language=C++]{code/ternary.cpp}
-	\item Ternary operators can be nested, and even used to run lines of code
-\end{itemize}
+\section{Memory Layout}
 
-\subsection{\texttt{switch} Statements}
+\subsection{Text Segment}
 
-\begin{itemize}
-	\item Think of \texttt{switch}es as \texttt{if}s where you have an \texttt{int} condition, not a \texttt{bool}
-	\item \texttt{switch} statement syntax: \texttt{switch(<var>) \{ <cases...> \}}
-	\begin{itemize}
-		\item The case corresponding to the \texttt{int} expression will be executed
-		\item If no case matches, \texttt{default} is executed
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/switch.cpp}
-	\item The \texttt{break} statements are needed, else every case below will also execute
-	\begin{itemize} \item Sometimes this is desired behavior, but rarely \end{itemize}
-	\item Switches are often preferred to chained \texttt{if}-\texttt{else} statements when possible
-	\begin{itemize}
-		\item They do not have the same overhead as many \texttt{if}s
-		\item They also enhance readability and maintainability of code bases
-	\end{itemize}
-\end{itemize}
+\subsection{Static Memory}
 
-\section{Loops}
+\subsubsection{Variable Lifetime}
 
-\noindent
-Often times, we need a certain block of code to run multiple times. Rather than copying and pasting the block, we can use a loop.
+\subsection{The Heap}
 
-\subsection{\texttt{while} Loops}
+\subsubsection{Operators \inlinecpp{new} and \inlinecpp{delete}}
 
-\begin{itemize}
-	\item When to use a \texttt{while} loop?
-	\begin{itemize}
-		\item You have a block that you need to run \textit{while} a condition is true
-		\item \textbf{Example:} \textit{while} the player is playing the game, render the screen
-	\end{itemize}
-	\item \texttt{while} loop syntax: \texttt{while (<condition>) \{...\}}
-	\begin{itemize}
-		\item \texttt{...} will run \texttt{while} condition is true
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/while.cpp}
-	\item When to use a \texttt{do while} loop?
-	\begin{itemize}
-		\item You need the block of code to run at least one time
-		\item \texttt{do \{...\} while (<condition>)}
-		\begin{itemize}\item The \texttt{do} keyword's only purpose is to pair the \texttt{while} loop to a scope written before it, rather than after
-		\end{itemize}
-		\item A \texttt{do-while} loop runs the block first, and checks the condition second
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/dowhile.cpp}
-\end{itemize}
+\subsubsection{Memory Leaks}
 
-\subsection{\texttt{for} Loops}
+\subsection{The Stack}
 
-\begin{itemize}
-	\item When to use a \texttt{for} loop?
-	\begin{itemize}
-		\item You need a block of code to run a set number of times
-		\begin{itemize}
-			\item \texttt{for} loops are much more flexible than \texttt{while} loops
-			\item Any \texttt{while} loop can be rewritten as a \texttt{for} loop
-		\end{itemize} 
-	\end{itemize}
-	\item \texttt{for} loop syntax: \texttt{for (<init>; <condition>; <update>) \{...\}} 
-	\begin{itemize}
-		\item \texttt{init} is a piece of code that will run once before the loop runs
-		\item \texttt{condition} works just like a \texttt{while} loop
-		\item \texttt{update} runs at the end of every loop iteration
-		\item You can leave any or all fields empty \begin{itemize}
-			\item The default behavior for an empty condition is ``\texttt{true}''
-		\end{itemize}
-	\end{itemize}
-	\lstinputlisting[language=C++]{code/for.cpp}
-\end{itemize}
-
-\section{Control Flow Statements}
-
-\subsection{\texttt{break} Keyword}
-
-\begin{itemize}
-	\item \texttt{break} is used to ``break out'' of loops and switches early
-	\item Can only be used within a loop or a switch, not any scope
-\end{itemize}
-
-\lstinputlisting[language=C++]{code/break.cpp}
-
-\subsection{\texttt{continue} Keyword}
-
-\begin{itemize}
-	\item \texttt{continue} is used to ``continue'' to the next iteration of a loop
-	\item Can only be used within a loop structure
-\end{itemize}
-
-\lstinputlisting[language=C++]{code/break.cpp}
-
-\subsection{\texttt{return} Keyword}
-
-\begin{itemize}
-	\item \texttt{return} is used to ``return'' a value from a function
-	\item Can only be used within a function
-
-\end{itemize}
-
-\lstinputlisting[language=C++]{code/return.cpp}
-
-\subsection{\texttt{goto} Keyword}
-
-\begin{itemize}
-	\item \texttt{goto} is used to jump to a label (defined as \texttt{<name>:})
-	\item Use of this keyword is heavily discouraged by many people
-\end{itemize}
-
-\lstinputlisting[language=C++]{code/goto.cpp}
+\subsubsection{The Stack Pointer}
 
 \end{document}

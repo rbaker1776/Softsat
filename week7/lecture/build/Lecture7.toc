@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Undefined Behavior}{2}{section.1}%
+\contentsline {section}{\numberline {2}Memory Safety}{2}{section.2}%
+\contentsline {section}{\numberline {3}Smart Pointers}{2}{section.3}%
+\contentsline {section}{\numberline {4}Exception Safety}{2}{section.4}%
