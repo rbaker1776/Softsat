@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  3 JAN 2025 18:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.24)  15 JAN 2025 12:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -217,11 +217,11 @@ File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
 Package: listings 2024/02/21 1.10 (Carsten Heinz)
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+Package hyperref Info: Option `colorlinks' set `true' on input line 51.
 
 
 Package hyperref Warning: Unexpected value for option `hidelinks'
-(hyperref)                is ignored on input line 41.
+(hyperref)                is ignored on input line 51.
 
 ) (./tex/titles.tex)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -295,7 +295,10 @@ File: lstlang1.sty 2024/02/21 1.10 listings language file
 (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 )) [2]
-(./week2/lecture/build/Lecture2.toc) [3] (./week3/lecture/build/Lecture3.toc)
+(./week2/lecture/build/Lecture2.toc
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
+) [3] (./week3/lecture/build/Lecture3.toc)
 [4] (./week4/lecture/build/Lecture4.toc) [5]
 (./week5/lecture/build/Lecture5.toc) [6] (./week6/lecture/build/Lecture6.toc)
 [7] (./week7/lecture/build/Lecture7.toc) [8]
@@ -309,37 +312,13 @@ Package rerunfilecheck Info: File `Outline.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10478 strings out of 474116
- 159048 string characters out of 5743681
+ 10465 strings out of 474116
+ 158917 string characters out of 5743681
  1940187 words of memory out of 5000000
- 32639 multiletter control sequences out of 15000+600000
- 562185 words of font info for 50 fonts, out of 8000000 for 9000
+ 32630 multiletter control sequences out of 15000+600000
+ 562492 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,6n,82p,365b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.1.7} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.1.6} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.1.1.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.1.1.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.1.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.1.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
+ 80i,6n,82p,364b,1292s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{subsection.1.5} has been referenced but does not ex
 ist, replaced by a fixed one
@@ -357,36 +336,28 @@ pdfTeX warning (dest): name{subsubsection.3.2.3} has been referenced but does n
 ot exist, replaced by a fixed one
 
 
+pdfTeX warning (dest): name{subsection.1.4} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.3.4.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.3.3.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.3.3.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
 pdfTeX warning (dest): name{subsubsection.3.2.2} has been referenced but does n
 ot exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.3.4} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
 pdfTeX warning (dest): name{subsubsection.3.2.1} has been referenced but does n
 ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.3.1.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.2.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.3} has been referenced but does not ex
-ist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsubsection.2.2.3} has been referenced but does n
@@ -401,10 +372,6 @@ pdfTeX warning (dest): name{subsubsection.2.2.1} has been referenced but does n
 ot exist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.1.4} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
 pdfTeX warning (dest): name{subsubsection.1.3.1} has been referenced but does n
 ot exist, replaced by a fixed one
 
@@ -413,20 +380,60 @@ pdfTeX warning (dest): name{subsection.1.3} has been referenced but does not ex
 ist, replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsubsection.1.2.4} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.1.2.3} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.1.2.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
 pdfTeX warning (dest): name{subsubsection.1.2.1} has been referenced but does n
 ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.1.1.3} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.1.1.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.1.1.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.3.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.3.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.4.3} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.1.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.4} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.3.1.3} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.3.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.3.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.2.1.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.1.2} has been referenced but does not ex
+ist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsection.5.4} has been referenced but does not ex
@@ -457,28 +464,8 @@ pdfTeX warning (dest): name{section.5} has been referenced but does not exist,
 replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.4.3} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.4.2.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.4.2.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
 pdfTeX warning (dest): name{subsection.4.2} has been referenced but does not ex
 ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.4.1.2} has been referenced but does n
-ot exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsubsection.4.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsection.4.1} has been referenced but does not ex
@@ -487,6 +474,10 @@ ist, replaced by a fixed one
 
 pdfTeX warning (dest): name{section.4} has been referenced but does not exist, 
 replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.3} has been referenced but does not ex
+ist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not ex
@@ -525,10 +516,6 @@ pdfTeX warning (dest): name{section.2} has been referenced but does not exist,
 replaced by a fixed one
 
 
-pdfTeX warning (dest): name{subsection.1.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
 pdfTeX warning (dest): name{subsection.1.1} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -542,10 +529,10 @@ usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
 cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on build/Outline.pdf (10 pages, 111244 bytes).
+Output written on build/Outline.pdf (10 pages, 109215 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 278 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

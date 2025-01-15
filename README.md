@@ -1,5 +1,7 @@
 # Directory Structure
 
+# r
+
 .
 ├── Outline.tex
 ├── README.md
@@ -133,3 +135,28 @@
             └── Quiz9.pdf
 
 68 directories, 63 files
+
+# Header
+# Header2
+
+```c++
+for (int i = 0; i < 10; ++i)
+{
+	int x {0};
+}
+```
+`[cpp]int`
+```
+int main()
+{
+std::cout << int << std::endl;
+}
+```
+
+```cpp {newslide}
+int main()
+{
+	std::cout << "world!" << std::endl;
+	return 0;
+}
+```

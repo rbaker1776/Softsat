@@ -28,7 +28,7 @@ echo "Creating the weekly directories and necessary files..."
 
 for i in $(seq 1 9); do
     week_dir="week$i"
-    mkdir -p "$week_dir/lecture/code" "$week_dir/lecture/build" "$week_dir/homework/code" "$week_dir/homework/build" "$week_dir/quiz/code" "$week_dir/quiz/build"
+    mkdir -p "$week_dir/lecture/code" "$week_dir/lecture/build" "$week_dir/homework/code" "$week_dir/homework/build" "$week_dir/quiz/code" "$week_dir/quiz/build" "$week_dir/lecture/archived"
     touch "$week_dir/lecture/Lecture$i.tex" "$week_dir/homework/Homework$i.tex" "$week_dir/quiz/Quiz$i.tex"
 done
 

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f9aa227f484f46ad",
+        "id": "bd21a1dd5fee6156",
         "type": "tabs",
         "children": [
           {
-            "id": "4ebdb47b00601583",
+            "id": "dcf81f8296c41e13",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Lecture1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Lecture1"
             }
           }
         ]
@@ -163,8 +163,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4ebdb47b00601583",
+  "active": "dcf81f8296c41e13",
   "lastOpenFiles": [
+    "Lecture1.md",
+    "week1/lecture/Lecture1.md",
+    "week1/lecture/Lecture1.md~",
+    "week9/lecture/build/Lecture9.pdf",
+    "README.md",
     "week9/homework/build/Homework9.toc",
     "week9/homework/build/Homework9.pdf",
     "week9/homework/build/Homework9.out",
@@ -172,9 +177,6 @@
     "week9/homework/build/Homework9.log",
     "week9/quiz/build/Quiz9.toc",
     "week9/quiz/build/Quiz9.pdf",
-    "week9/quiz/build/Quiz9.out",
-    "week9/quiz/build/Quiz9.aux",
-    "week9/quiz/build/Quiz9.log",
-    "week9/lecture/build/Lecture9.toc"
+    "week9/quiz/build/Quiz9.out"
   ]
 }

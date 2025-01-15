@@ -1,19 +1,10 @@
-\contentsline {section}{\numberline {1}Standard Containers}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Sequence Containers}{2}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}\lstinline [language=C++]|std::array|}{2}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}\lstinline [language=C++]|std::vector|}{2}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}\lstinline [language=C++]|std::deque|}{2}{subsubsection.1.1.3}%
-\contentsline {subsubsection}{\numberline {1.1.4}\lstinline [language=C++]|std::list|}{2}{subsubsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.2}Associative Containers}{2}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}\lstinline [language=C++]|std::set|}{2}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}\lstinline [language=C++]|std::map|}{2}{subsubsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.3}Unordered Containers}{2}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}\lstinline [language=C++]|std::unordered\_set|}{2}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}\lstinline [language=C++]|std::unordered\_map|}{2}{subsubsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.4}\lstinline [language=C++]|std::sort|}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}\lstinline [language=C++]|std::find|}{2}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}\lstinline [language=C++]|std::accumulate|}{2}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Container Adapters}{2}{subsection.1.7}%
-\contentsline {section}{\numberline {2}Iterators}{2}{section.2}%
-\contentsline {section}{\numberline {3}Ranges}{2}{section.3}%
-\contentsline {section}{\numberline {4}Views}{2}{section.4}%
+\contentsline {section}{\numberline {1}Introduction to Templates}{2}{section.1}%
+\contentsline {section}{\numberline {2}Function Templates}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Implicit Template Deduction}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Template Function Overloading}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Function Template Specialization}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Class Templates}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Class Template Instantiation}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Class Template Specialization}{2}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Non-Type Template Parameters}{2}{section.4}%
+\contentsline {section}{\numberline {5}Variadic Templates}{2}{section.5}%

@@ -1,0 +1,192 @@
+\documentclass{article}
+
+\input{../../../tex/titles.tex}
+\newcommand{\thistitle}{\titlethree}
+\newcommand{\me}{Ryan Baker}
+
+\input{../../../tex/header.tex}
+
+\title{\thistitle}
+\author{\me}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Functions}
+
+\noindent
+Often, we want to simplify complex problems and repeat computations, and functions help by breaking tasks into smaller units. This makes the code easier to reuse, maintain, and test.
+
+\begin{itemize}
+	\item \textbf{Definition:} A function in C++ is a named block of code that takes inputs, does something with them, and can return a result.
+	\item \textbf{Declaring a Function:} \inlinecpp{type name(args) \{...\}}
+	\begin{itemize}
+		\item[\texttt{type}:] The return type of the function (e.g., \inlinecpp{int}, \inlinecpp{void}, etc.)
+		\item[\texttt{name}:] The function's name
+		\item[\texttt{args}:] The function arguments or parameters as a comma separated list
+	\end{itemize}
+	\centercpp{int add(int a, int b, int c);}
+	\item \inlinecpp{void} is used as the return type for functions that don't return anything:
+	\centercpp{void greet();}
+	\item \textbf{Functions and the Stack:} Every time a function is called, its local variables and arguments are pushed atop the stack.
+\end{itemize}
+
+\subsection{Passing by Value vs. Passing by Reference}
+
+\noindent
+Arguments that are passed into a function are, by default, copied. This means that the original value will remain unmodified:
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+
+void increment(int x) { x++; }
+
+int main()
+{
+	int x = 0;
+	increment(x); // copy of x is passed to increment
+	std::cout << x << std::endl; // x = 0
+}
+\end{lstlisting}
+
+\noindent
+Very often, this is the intended effect. One other consideration is that for very large objects copying is expensive. The alternative is to pass arguments by reference:
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+
+void increment(int& x) { x++; }
+
+int main()
+{
+	int x = 0;
+	increment(x); // reference to x is passed
+	std::cout << x << std::endl; // x = 1
+}
+\end{lstlisting}
+
+\subsection{Function Overloading}
+
+\noindent
+Together, a function's name and arguments make up its \textit{signature}. Because the arguments are included, two functions with the same name but different arguments will not cause duplicate symbol errors:
+
+\begin{lstlisting}[language=C++]
+// two functions can have the same name
+int add(int a, int b)        { return a + b; }
+int add(int a, int b, int c) { return a + b + c; }
+\end{lstlisting}
+
+\noindent
+Note that it is not enough for the functions to have differently names arguments.
+
+\section{Scope}
+
+\noindent
+Scope is defined by \inlinecpp{\{\}} in C++. A scope is a region of the program where a varibale or symbol is valid.
+
+\subsection{Types of Scope}
+
+\subsubsection{Global Scope}
+
+Variables in global scope are accessible throughout the program.
+
+\subsubsection{Local Scope}
+
+Variables in local, or function scope, are accessible only in their function.
+
+\subsubsection{Anonymous Scope}
+
+Scopes can be defined anonymously, helping with naming conflicts:
+
+\begin{lstlisting}[language=C++]
+int main()
+{
+	{ // anonymous scope
+ 		int x = 0;
+	}
+}
+\end{lstlisting}
+
+\subsection{Namespaces}
+
+\noindent
+Namespaces are a tool that helps us deal with naming conflicts. Consider you're writing a library with a function called \inlinecpp{init()}. You'd be bound to end up with a naming conflict, which is where namespaces help.
+
+\begin{lstlisting}[language=C++]
+namespace Library
+{
+	void init();
+}
+\end{lstlisting}
+
+\subsubsection{Namespace Operator \inlinecpp{::}}
+
+\centercpp{Library::init();}
+
+\subsubsection{\inlinecpp{using} Namespaces}
+
+\centercpp{using namespace std;}
+
+\centercpp{using std::cout;}
+
+\section{Conditions and Branching}
+
+\noindent
+Often times in programming, we want to choose which path to execute based on certain conditions.
+
+\subsection{Boolean Expressions}
+
+\noindent
+A boolean variable can represent true or false. Thus, a boolean expression is an expression that evaluates to true or false.
+
+\subsubsection{\inlinecpp{bool()} Casts}
+
+\noindent
+Evaluates to true if not 0, false if 0 for numeric types.
+
+\subsubsection{Comparison Operators: \inlinecpp{==}, \inlinecpp{!=}, \inlinecpp{<}, \inlinecpp{<=}, \inlinecpp{>}, \inlinecpp{>=}}
+
+\centercpp{==, !=, <, <=, >, >=}
+
+\subsubsection{Logical Operators: \inlinecpp{!}, \inlinecpp{&&}, \texttt{||}}
+
+\centercpp{!, &&, \|\|}
+
+\subsection{\inlinecpp{if} Statements}
+
+\noindent
+\inlinecpp{if} Statements are used to execute a block of code if a condition is true:
+
+\subsubsection{The Overhead of \inlinecpp{if} Statements}
+
+After the evaluation of an if statement, the execution jumps around and loads new instructions.
+
+\subsection{\inlinecpp{switch} Statements}
+
+Like if statements but for integer expressions not boolean.
+
+\subsection{Ternary Operator \inlinecpp{? :}}
+
+\section{Loops}
+
+\subsection{\inlinecpp{while} Loops}
+
+\subsubsection{\inlinecpp{do while} Loops}
+
+\subsection{\inlinecpp{for} Loops}
+
+\subsubsection{Blank Fields}
+
+\section{Control Flow Keywords}
+
+\subsection{\inlinecpp{break} Keyword}
+
+\subsection{\inlinecpp{continue} Keyword}
+
+\subsection{\inlinecpp{return} Keyword}
+
+\end{document}

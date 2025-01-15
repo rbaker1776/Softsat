@@ -5,8 +5,6 @@
 \newcommand{\me}{Ryan Baker}
 
 \input{../../tex/header.tex}
-\usepackage{array}
-\usepackage{longtable}
 
 \title{\thistitle}
 \author{\me}
@@ -16,368 +14,50 @@
 
 \maketitle
 \tableofcontents
+\pagebreak
 
 \section{Course Introduction}
 
 \subsection{Lecture Series Overview}
 
-\begin{enumerate}
-\item[]
-\begin{enumerate}
-	\item[Week 1.] \titleone
-	\item[Week 2.] \titletwo
-	\item[Week 3.] \titlethree
-	\item[Week 4.] \titlefour
-	\item[Week 5.] \titlefive
-	\item[Week 6.] \titlesix
-	\item[Week 7.] \titleseven
-	\item[Week 8.] \titleeight
-	\item[Week 9.] \titlenine
-\end{enumerate}
-\end{enumerate}
+\section{Introduction to C++}
 
-\subsection{Why Learn C++}
-
-\noindent
-C++ is a powerful, versatile, and foundational programming language that remains relevant in modern software development.
-
-\paragraph{Performance and Efficiency:}
-C++ is known for its high performance and low-level memory control, making it ideal for performance-critical applications such as game engines, real-time systems, and high-frequency trading.
-
-\paragraph{Foundational Language:}
-Many languages are inspired by or built on C++ concepts. Learning C++ provides a solid foundation for understanding these languages.
-
-\paragraph{Extensive Ecosystem:}
-C++ has a rich ecosystem of libraries and frameworks that make it easier to build powerful and complex systems efficiently.
-
-\section{Features of C++}
+\subsection{Why C++?}
 
 \subsection{Evolution of C++}
 
-\noindent
-C++ has evolved from a simple extension of C into a modern multi-paradigm programming language:
-
-\begin{itemize}
-	\item[\textbf{1979:}] C++ was created by Bjarne Stroustrup as a simple extension of C.
-	\item[\textbf{1998:}] C++98 standard formalized the language, solidifying its features.
-	\item[\textbf{2011:}] C++11 brings the largest update the language has seen, modernizing it.
-	\item[\textbf{2020:}] C++20 brings features that make the language more powerful and useable.
-	\item[\textbf{2026:}] C++26 is in development, and will likely bring with it reflection and more.
-\end{itemize}
-
-\subsection{The C++ Philosophy}
-
-\noindent
-C++ is a sharp tool. It offers great control over system resources and performance, but requires careful and skilled use. It combines low-level features, like pointers, with high-level abstractions, enabling efficient, optimized code. While powerful, C++ comes with complexity, demanding expertise to avoid issues like memory leaks or crashes. Its flexibility makes it ideal for performance-critical applications, but it requires precision and understanding to use effectively.
-
 \subsection{C++ vs. Other Languages}
-
-\paragraph{Compiled vs. Interpreted:}
-C++ is a \textit{compiled} language, meaning code is directly translated into machine code, which typically leads to faster execution compared to interpreted languages like Python or JavaScript. This makes C++ ideal for performance-critical applications. \textit{Interpreted} languages are read and executed line-by-line and often have a simpler developer experience.
-
-\paragraph{Strongly Typed:}
-C++ uses \textit{strong typing}, meaning types are strictly checked at compile time. This reduces runtime errors and leads to better performance and reliability. Dynamically typed languages don't have the ability to detect type errors before run time.
-
-\paragraph{Multi-Paridigm:}
-C++ supports multiple programming paradigms, including procedural, object-oriented, and generic programming. This flexibility allows developers to use the best paradigm for the task at hand.
 
 \section{Environment Setup}
 
 \subsection{Tools Required}
 
-\noindent
-To develop C++, you need two basic tools: a \textbf{text editor} and a \textbf{compiler}.
-
 \subsubsection{Text Editor}
-
-\begin{itemize}
-	\item What is a text editor? A tool at edits text. \inlinecpp{// duh}
-	\item \textbf{Text Editor vs. IDE:} A text editor is a basic tool for writing plain text, while an IDE (Integrated Development Environment) is a more comprehensive tool that includes a code editor, debugging tools, code completion, an build automation.
-	\item Some popular text editors include:
-	\begin{itemize}
-		\item \textbf{Visual Studio Code:} A free, open-source IDE with support for C++ through extensions.
-		\item \textbf{CLion:} An IDE specifically built for C++ with advanced features.
-		\item \textbf{Vim/Neovim:} My personal choice. Has a steep learning curve, but absolutely worth it.
-		\begin{itemize}
-			\item If you decide to go with Vim or Neovim, I recommend spending some time configuring your setup. Feel free to ask me for help.
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
 
 \subsubsection{Compiler}
 
-\begin{itemize}
-	\item \textbf{Definition:} The compiler converts your C++ source code into machine-readable instructions.
-	\item Common C++ compilers include:
-	\begin{itemize}
-		\item \textbf{gcc:} The GNU Compiler Collection, a popular open-source compiler. Best for Windows OS and Linux.
-		\item \textbf{clang:} My personal favorite, known for its performance and diagnostics. Best for Mac OS.
-		\item \textbf{MSVC:} An increasingly irrelevant piece of garbage. Second best for Windows.
-	\end{itemize}
-	\item Throughout the lecture series, I will be using \texttt{clang}. If a certain \texttt{clang} flag or directive does not work for your compiler, simply look up its equivalent.
-\end{itemize}
+\subsection{Installation Guides}
 
-\subsection{``Hello, World!'' Example}
-
-\noindent
-With your text editor of choice, write the following C++ program:
-
-\begin{lstlisting}[language=C++]
-#include <iostream>
-
-int main()
-{
-	std::cout << "Hello, World!" << std::endl;
-	return 0;
-}
-\end{lstlisting}
-
-\noindent
-Compile and run the program with your compiler of choice. You should see ``Hello, World!'' printed to the console.
+\subsection{\inlinecpp{"Hello, World!"} Example}
 
 \section{Basic Syntax and Structure}
 
-\subsection{Basic Structure of a C++ Program}
+\subsection{\inlinecpp{int main()}}
 
-\subsubsection{\inlinecpp{int main()}}
-
-\begin{itemize}
-	\item \textbf{Entry Point:} The \inlinecpp{main()} function is where every C++ program starts executing. It serves as the ``entry point'' for a program.
-	\item \textbf{Return Value:} \inlinecpp{main()} returns an integer to indicate the program's exit status. By convention, returning \inlinecpp{0} means successful execution.
-	\begin{itemize}
-		\item In modern C++, \inlinecpp{return 0} is implicit
-	\end{itemize}
-\end{itemize}
-
-\begin{lstlisting}[language=C++]
-int main() {} // the shortest complete C++ program
-\end{lstlisting}
-
-\subsubsection{Statements and Expressions}
-
-\noindent
-The code inside the \inlinecpp{main()} function is made up of statements (commands).
-
-\subsection{Foundational Concepts}
-
-\subsubsection{Semicolons, \inlinecpp{/* comments */}, and Whitespace}
-
-\begin{itemize}
-	\item \textbf{Semicolons:} Every statement in C++ ends with a semicolon:
-	\centercpp{std::cout << "Hello, World!" << std::endl;}
-	\begin{itemize}
-		\item This lets the compiler know that the line is finished
-	\end{itemize}
-	\item \textbf{Comments:} Comments are a way of ``taking notes'' within your code. They are ignored by the compiler entirely, but help you and other developers understand the code.
-	\item There are two ways of writing comments:
-	\begin{itemize}
-		\item \textbf{Single Line:} Single line comments are prefixed with \inlinecpp{//}:
-		\centercpp{int main() // main function serves as the entry point}
-		\item \textbf{Block:} Block comments are written with \inlinecpp{/* */} notation:
-		\centercpp{int /* why is there a comment here? */ main()}
-		\item \textsl{Ryan's Advice:} Lightly prefer \inlinecpp{//} to \inlinecpp{/* */} because the parsing of \inlinecpp{/* */} is more complicated and can lead to errors if you aren't careful.
-	\end{itemize}
-	\item \textbf{Whitespace:} C++ could not care less about whitespace. Whitespace includes spaces, tabs, and newlines.
-	\begin{itemize}
-		\item This means that is its possible, although not generally recommended, to write a C++ program in one line of code:
-	\end{itemize}
-	\centercpp{int main() \{ std::cout << "Hello, World!" << std::endl; \}}
-\end{itemize}
-
-\subsubsection{Line-by-Line Execution}
-
-\noindent
-In C++, the program executes statement sequentially, starting from the top of \inlinecpp{main()} and moving downward.
-
-\begin{lstlisting}[language=C++]
-int main()
-{
-	std::cout << "First"  << std::endl;
-	std::cout << "Second" << std::endl;
-}
-\end{lstlisting}
-
-\subsection{Input and Output with \inlinecpp{iostream}}
-
-\begin{itemize}
-	\item \inlinecpp{std::cout} (character out) is used for printing output to the console.
-	\item The \textbf{insertion operator} \inlinecpp{<<} is used to send data to the output stream:
-	\centercpp{std::cout << "Hello, World!" << std::endl;}
-	\item \inlinecpp{std::cin} (character in) is used to get input from the user via the console.
-	\item The \textbf{extraction operator} \inlinecpp{>>} is used to read from the input stream:
-	\centercpp{std::cin >> data; // reads into a variable called "data"}
-	\item \inlinecpp{std::endl} is used to inset a newline character and flush the output buffer.
-\end{itemize}
-
-\begin{lstlisting}[language=C++]
-#include <iostream>
-
-int main()
-{
-	int age;	
-	std::cout << "Enter your age: ";
-	std::cin >> age;
-}
-\end{lstlisting}
+\subsection{Semicolons, \inlinecpp{/* comments */}, and Whitespace}
 
 \section{Datatypes and Variables}
 
-\noindent
-All of programming is manipulating and interpreting data. Data comes in different shapes and sizes, forming a \textit{datatype}. An instance of a datatype is stored in a \textit{variable}.
-
 \subsection{\inlinecpp{sizeof} Operator}
-
-\noindent
-The \inlinecpp{sizeof} operator in C++ is used to determine the size, in bytes, of a data type or object:
-
-\centercpp{std::cout << sizeof(int) << std::endl; // usually 4}
-
-\noindent
-Arguably, the only difference between any two datatype is their size. At the end of the day, all datatypes are made up of bits, and it is only how we interpret their bits that gives them any meaning.
 
 \subsection{Primitive Types}
 
-\noindent
-C++ provides several built-in datatypes, called \textit{primitive} types:
-
-\begin{itemize}
-	\item[\textcolor{BurntOrange}{\texttt{int}}:] Represents integer values (e.g., 5, -10, 42)
-	\begin{itemize}
-		\item Integers can be \textit{signed} ($\pm$) or \textit{unsigned} (only $+$).
-		\item There are several integer modifiers for both the signed-ness and size:
-		\begin{itemize}
-			\item[\textcolor{BurntOrange}{\texttt{short}}:] Short integer, \inlinecpp{sizeof(short)} = 2 (usually)
-			\item[\textcolor{BurntOrange}{\texttt{long}}:] Long integer, \inlinecpp{sizeof(long)} = 4 (sometimes 8)
-			\item[\textcolor{BurntOrange}{\texttt{long long}}:] Extra long integer, \inlinecpp{sizeof(long long) = 8 (usually)}
-			\item[\textcolor{BurntOrange}{\texttt{unsigned}}:] Modifies any integer to be unsigned
-			\item[] \textsl{Ryan's Advice:} I find these keywords to be rather confusing, especially because their sizes are not defined by C++. I tend to use the \inlinecpp{cstdint} header which defines all the same types:
-\begin{lstlisting}[language=C++]
-#include <cstdint>
-
-int main()
-{
-	int32_t x = 0;  // guaranteed 32 bits
-	int64_t y = 0;  // guaranteed 64 bits
-	uint16_t z = 0; // `u' means unsigned
-}
-\end{lstlisting}
-		\end{itemize}
-		\item Because a computer's memory is finite, so too is the range of an \inlinecpp{int}.
-		\begin{itemize}
-			\item The maximum value of an \inlinecpp{unsigned int} can be calculated as $2^w$ where $w$ is the width of the \inlinecpp{int} in bits. The minimum is 0.
-			\begin{itemize}
-				\item The range of a \inlinecpp{uint32_t} is $[0, 2^{32}-1]=[0, 4294967295]$
-			\end{itemize}
-			\item For signed integers, the maximum value is $2^{w-1}-1$ and the minimum value is $-2^{w-1}$ where $w$ is the width in bits.
-			\begin{itemize}
-				\item The range of an \inlinecpp{int32_t} is $[-2147483648, 2147483647]$
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
-	\item[\textcolor{BurntOrange}{\texttt{char}}:] Used to store single characters (e.g., `a', `2')
-	\begin{itemize}
-		\item Characters are just integers in disguise. Every character has a corresponding integer value according to the \textbf{ASCII Table}.
-		\centercpp{std::cout << int('a') << std::endl; // 97}
-		\centercpp{std::cout << char(97) << std::endl; // `a'}
-		\item \inlinecpp{sizeof(char)} = 1 (usually)
-	\end{itemize}
-	\item[\textcolor{BurntOrange}{\texttt{bool}}:] Represents boolean values (\texttt{true} or \texttt{false})
-	\begin{itemize}
-		\item Booleans are just integers in disguise.
-		\centercpp{std::cout << int(true) << std::endl; // 1}
-		\centercpp{std::cout << int(false) << std::endl; // 0}
-		\item \inlinecpp{sizeof(bool)} = 1 (usually)
-	\end{itemize}
-	\item[\textcolor{BurntOrange}{\texttt{float}}:] Represents fractional values (e.g., 5.5, -5.5, 3.14159)
-	\begin{itemize}
-		\item \inlinecpp{sizeof(float)} = 4 (usually), \inlinecpp{sizeof(double)} = 8 (usually)
-		\begin{itemize}
-			\item \inlinecpp{double} (precision) is a larger, more precise version of a float.
-		\end{itemize}
-		\item Casting a \inlinecpp{float} to an \inlinecpp{int} truncates the decimal portion:
-		\centercpp{std::cout << int(5.5) << std::endl; // 5}
-	\end{itemize}
-	\item[\textcolor{BurntOrange}{\texttt{void}}:] Represents ``no type''
-	\begin{itemize}
-		\item \inlinecpp{sizeof(void)} is a senseless operation and throws errors.
-	\end{itemize} 
-\end{itemize}
-
 \subsection{Declaration and Definition}
-
-\noindent
-Creating variables can be broken into two steps: \textbf{declaration}, and \textbf{definition}.
-
-\begin{itemize}
-	\item \textbf{Declaration:} ``I declare that this variable exists!'':
-	\centercpp{int x; // x exists! Who cares about its value?}
-	\item \textbf{Definition:} ``I define this variable to be $\underline{\quad}$!'':
-	\centercpp{x = 42; // x is defined to be 42!}
-	\item Often times it makes sense to combine declaration and definition:
-	\centercpp{int x = 42; // declared and defined}
-\end{itemize}
 
 \subsubsection{Assignment Operator \inlinecpp{=}}
 
-\noindent
-The \textbf{assignment operator} \inlinecpp{=} is used to assign a value to a variable:
-
-\centercpp{variable = value;}
-
-\begin{lstlisting}[language=C++]
-int x = 5; // assign 5 to x
-int y;
-y = x; // assign the value of x to y
-\end{lstlisting}
-
-\begin{itemize}
-	\item \textbf{Chaining:} The assignment operator can be chained:
-	\centercpp{int a, b, c, d; a = b = c = d = 5;}
-	\item \textbf{Reassignment:} Can be used to reassign a new value to a variable:
-	\centercpp{int a = 5; a = 6; a = 7;}
-\end{itemize}
-
 \subsubsection{Brace Initialization \inlinecpp{\{\}}}
 
-\noindent
-Brace initialization is a feature introduced in C++11 that allows variables to be initialized using curly braces \inlinecpp{\{\}}. This provides a more uniform and safer way to initialize variables.
-
-\begin{itemize}
-	\item \textbf{Syntax:} \inlinecpp{int x\{5\}; // initializes x to 5}
-	\item Brace initialization prevents narrowing conversions which occur when a larger data type is assigned to a smaller one:
-\begin{lstlisting}[language=C++]
-int x = 5.5; // 5.5 gets truncated, but no error
-int y{5.5};  // an error gets thrown
-\end{lstlisting}
-	\item Default Initialization: For primitive types, if no value is provided, the variable will be value-initialized:
-	\centercpp{int x\{\}; // x is initialized to 0}
-	\item \textsl{Ryan's Advice:} Prefer brace initialization to initialization with \texttt{=}.
-\end{itemize}
-
-\subsection{Arithmetic Operators}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|l|l|}
-\hline
-\textbf{Operator} & \textbf{Description} & \textbf{Example} \\ \hline
-\inlinecpp{+} & Adds two operands & \texttt{x + y}\\ \hline
-\inlinecpp{-} & Subtracts two operands & \texttt{x - y} subtracts y from x \\ \hline
-\inlinecpp{*} & Multiplies two operands & \texttt{x * y} multiplies x and y \\ \hline
-\inlinecpp{/} & Divides two operands & \texttt{x / y} divides x by y \\ \hline
-\inlinecpp{\%} & Remainder of a division & \texttt{x \% y} = remainder of \inlinecpp{x / y} \\ \hline
-\inlinecpp{++} & Increments the operand & \texttt{++x} or \texttt{x++} increases x by 1 \\ \hline
-\inlinecpp{--} & Decrements the operand & \texttt{--x} or \texttt{x--} decreases x by 1 \\ \hline
-\end{tabular}
-\caption{Basic Arithmetic Operators in C++}
-\begin{itemize}
-	\item Basic arithmetic operators can be combined with the assignment operator to perform both operations at once:
-\begin{lstlisting}[language=C++]
-int x = 10;
-x += 10; // same as x = x + 10
-x /= 4;  // same as x = x / 4
-\end{lstlisting}
-\end{itemize}
-\end{table}
+\subsection{Arithmetic Operators \inlinecpp{+}, \inlinecpp{-}, \inlinecpp{*}, \inlinecpp{/}, \inlinecpp{\%}}
 
 \end{document}

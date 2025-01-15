@@ -1,33 +1,22 @@
 \contentsline {section}{\numberline {1}Course Introduction}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Lecture Series Overview}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Why Learn C++}{2}{subsection.1.2}%
-\contentsline {paragraph}{Performance and Efficiency:}{2}{section*.2}%
-\contentsline {paragraph}{Foundational Language:}{2}{section*.3}%
-\contentsline {paragraph}{Extensive Ecosystem:}{2}{section*.4}%
-\contentsline {section}{\numberline {2}Features of C++}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Evolution of C++}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}The C++ Philosophy}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}C++ vs. Other Languages}{3}{subsection.2.3}%
-\contentsline {paragraph}{Compiled vs. Interpreted:}{3}{section*.5}%
-\contentsline {paragraph}{Strongly Typed:}{3}{section*.6}%
-\contentsline {paragraph}{Multi-Paridigm:}{3}{section*.7}%
-\contentsline {section}{\numberline {3}Environment Setup}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Tools Required}{3}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Text Editor}{3}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Compiler}{4}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}``Hello, World!'' Example}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Basic Syntax and Structure}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Basic Structure of a C++ Program}{4}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}\lstinline [language=C++]|int main()|}{4}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Statements and Expressions}{5}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Foundational Concepts}{5}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Semicolons, \lstinline [language=C++]|/* comments */|, and Whitespace}{5}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Line-by-Line Execution}{5}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Input and Output with \lstinline [language=C++]|iostream|}{6}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Datatypes and Variables}{6}{section.5}%
-\contentsline {subsection}{\numberline {5.1}\lstinline [language=C++]|sizeof| Operator}{6}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Primitive Types}{7}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Declaration and Definition}{8}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Assignment Operator \lstinline [language=C++]|=|}{8}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Brace Initialization \lstinline [language=C++]|\{\}|}{9}{subsubsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.4}Arithmetic Operators}{9}{subsection.5.4}%
+\contentsline {section}{\numberline {2}Introduction to C++}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Why C++?}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Evolution of C++}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}C++ vs. Other Languages}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Environment Setup}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Tools Required}{2}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Text Editor}{2}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Compiler}{2}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Installation Guides}{2}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}\lstinline [language=C++]|"Hello, World!"| Example}{2}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Basic Syntax and Structure}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}\lstinline [language=C++]|int main()|}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Semicolons, \lstinline [language=C++]|/* comments */|, and Whitespace}{2}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Datatypes and Variables}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}\lstinline [language=C++]|sizeof| Operator}{2}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Primitive Types}{2}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Declaration and Definition}{2}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Assignment Operator \lstinline [language=C++]|=|}{2}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Brace Initialization \lstinline [language=C++]|\{\}|}{2}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Arithmetic Operators \lstinline [language=C++]|+|, \lstinline [language=C++]|-|, \lstinline [language=C++]|*|, \lstinline [language=C++]|/|, \lstinline [language=C++]|\%|}{2}{subsection.5.4}%

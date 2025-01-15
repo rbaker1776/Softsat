@@ -18,405 +18,54 @@
 \tableofcontents
 \pagebreak
 
-\section{The Build Process}
-
-\noindent
-How does our source code get translated into an executable program? Understanding this process will allow us to write and debug more effectively.
-
-\subsection{Source Code}
-
-\begin{itemize}
-	\item \textbf{Definition:} Human-readable C++ code, typically in \texttt{.cpp} files.
-	\item $\texttt{.cpp}\rightarrow\boxed{\textrm{Preprocessor}}\rightarrow\boxed{\textrm{Compiler}}\rightarrow\boxed{\textrm{Linker}}\rightarrow\texttt{.exe}$
-	\item Source code is essentially a text file, there is nothing special about \texttt{.cpp}:
-	\begin{itemize}
-		\item[\texttt{>>}] \texttt{cp helloworld.cpp ryan.baker}
-		\item[\texttt{>>}] \texttt{clang++ -x c++ ryan.baker -o exe \&\& ./exe}
-	\end{itemize}
-\end{itemize}
-
-\subsection{Preprocessor}
-
-\paragraph{Definition:}
-
-\noindent
-The preprocessor handles various \textit{directives} to modify or generate code before it is passed to the compiler.
-
-\subsubsection{Text Substitution}
-
-\begin{itemize}
-	\item The preprocessor can perform basic text replacement:
-	\centercpp{#define FIND REPLACE // replaces "FIND" with "REPLACE"}
-	\item Most, but certainly not all, text substitution with the preprocessor is rendered obsolete by modern C++ features and is not recommended.
-	\item \textbf{Object-Like Macros:} These macros behave like constants:
-	\centercpp{#define PI 3.14159 // replaces PI with 3.14159}
-	\item\textbf{Function-Like Macros:} The macros resemble functions:
-	\centercpp{#define SQUARE(x) ((x) * (x)) // SQUARE(2) -> ((2) * (2))}
-	\begin{itemize}
-		\item Beware of unintended side effects:
-		\centercpp{SQUARE(i++) // unsequenced modifications to i}
-	\end{itemize}
-	\item \textbf{The preprocessor is dumb but the compiler is smart.} When using macros, keep in mind that you are offered no type safety, and they have no knowledge of the language.
-\end{itemize}
-
-\subsubsection{Conditional Compilation}
-
-\begin{itemize}
-	\item The preprocessor can be used to \textit{conditionally} pass code to the compiler.
-	\item \textbf{Directives:} \inlinecpp{#if}, \inlinecpp{#ifdef}, \inlinecpp{#ifndef}, \inlinecpp{#else}, \inlinecpp{#elif}, \inlinecpp{#endif} can be used to control which code gets compiled.
-	\item \textbf{Example:} Conditionally compiling for debug mode is common practice:
-\begin{lstlisting}[language=C++]
-#ifdef (DEBUG)
-	assert(x > 0);
-#endif
-\end{lstlisting}
-	\item See \textbf{File Inclusion $\rightarrow$ Include Guards} for another common usecase.
-	\end{itemize}
-
-\subsubsection{File Inclusion}
-
-\begin{itemize}
-	\item The preprocessor can be used to \textit{include} the contents of an external file.
-	\item There are two types of file inclusion with a slight difference in syntax:
-	\begin{itemize}
-		\item \textbf{System Inclusion:} System headers are included with angle brackets \inlinecpp{<>}, and the preprocessor searches only system directories.
-		\centercpp{#include <iostream>}
-		\item \textbf{Local Inclusion:} Local header files are included with double quotes \inlinecpp{""}, and the preprocessor searches the local directory first, then searches the system directories if the file is not found.
-		\centercpp{#include "myfile.hpp"}
-		\item You can technically use \inlinecpp{""} to include every file, but this is both slower and fails to convey intention to any readers of your code.
-	\end{itemize}
-	\item \inlinecpp{#include} works by ``copying and pasting'' the file at the place it's included.
-	\item \textbf{Include Guards:} If the same file is included twice, redefinition errors can occur. To prevent this, header files often use preprocessor \textit{include guards}:
-\begin{lstlisting}[language=c++]
-#ifndef MY_HEADER_HPP
-#define HY_HEADER_HPP
-// file content...
-#endif // MY_HEADER_HPP
-\end{lstlisting}
-\end{itemize}
-
-\subsubsection{Preprocessor Output}
-
-\begin{itemize}
-	\item The output of the preprocessor is C++ code with all directives processed.
-	\item You can view the output using the \texttt{-E} flag:
-	\begin{itemize}
-		\item[\texttt{>>}] \texttt{clang++ -E helloworld.cpp > output.cpp}
-	\end{itemize}
-	produces \texttt{output.cpp} which can be compiled and executed.
-\end{itemize}
-
-\subsection{Compilation}
-
-\paragraph{Definition:}
-The compiler translates C++ code into machine code.
-
-\begin{itemize}
-	\item The compiler is responsible for:
-	\begin{itemize}
-		\item Notifying you of any syntax errors.
-		\item Notifying you of semantic errors (type errors, undeclared variables).
-		\item Maintaining intended code behavior.
-	\end{itemize}
-	\item \textbf{The compiler is your friend!}
-	\begin{itemize}
-		\item The compiler tries to improve your code's performance and footprint.
-		\item Anything you can do to help it generate better code is appreciated.
-		\begin{itemize}
-			\item A large part of being an effective C++ developer is knowing how to communicate intention to the compiler (we will see examples throughout the course).
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
-
-\subsubsection{Compiler Output}
-
-\begin{itemize}
-	\item The compiler outputs object code, usually in \texttt{.o} or \texttt{.obj} files.
-	\item You can view the assembly output with the \texttt{-S} flag:
-	\begin{itemize}
-	\item[\texttt{>>}]\texttt{clang++ -S helloworld.cpp}
-	\end{itemize}
-	produces \texttt{helloworld.s}, an assembly file corresponding to the source file.
-	\item You can view the compiler output object files with the \texttt{-c} flag:
-	\begin{itemize}
-		\item[\texttt{>>}] \texttt{clang++ -c helloworld.cpp}
-	\end{itemize}
-	produces \texttt{helloworld.o}, an object file containing raw machine code, ready for linking. This output is not human-readable.
-\end{itemize}
-
-\subsection{Linking}
-
-\paragraph{Definition:}
-The linker is responsible for combining object files and resolving symbols to produce a single executable or library.
-
-\begin{itemize}
-	\item We often want to modularize our code by writing it across multiple files. This is where the linker is needed.
-	\item \textbf{Example:}
-\begin{lstlisting}[language=C++]
-// file2.hpp
-void greet();
-\end{lstlisting}
-\begin{lstlisting}[language=C++]
-// file2.cpp
-#include <iostream>
-#include "file2.hpp"
-
-void greet()
-{
-	std::cout << "Hello from file2!" << std::endl;
-}
-\end{lstlisting}
-\begin{lstlisting}[language=C++]
-// file1.cpp
-#include <iostream>
-#include "file2.hpp"
-
-int main()
-{
-	greet();
-	return 0;
-}
-\end{lstlisting}
-	\begin{itemize}
-		\item[\texttt{>>}] \texttt{clang++ file1.cpp} \inlinecpp{// ld error: undefined symbol: greet()}
-		\item[\texttt{>>}] \texttt{clang++ file1.cpp file2.cpp} \inlinecpp{// pass both file1 and file2}
-	\end{itemize}
-	\item There are two basic types of linking:
-	\begin{itemize}
-		\item \textbf{Static Linking:} Combines all object files and resolves symbols (e.g., function and variable references) to produce a single executable.
-		\item \textbf{Dynamic Linking:} Links against shared libraries at run time.
-	\end{itemize}
-	\item The linker notifies you of any undefined or duplicate symbols across the object files.
-	\item \textbf{Linker Output:} The linker outputs an executable file.
-	\begin{itemize}
-		\item The output can be specified with the \texttt{-o} flag:
-		\begin{itemize}
-			\item[\texttt{>>}] \texttt{clang++ -o exe helloworld.cpp}
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
-
-\section{Introduction to Memory}
-
-\noindent
-Everything, from variables to machine instructions, is stored in memory. Understanding memory is vital for effective C++ programming.
-
-\subsection{How C++ Uses Memory}
-
-\noindent
-At a high level, C++ uses memory to store and manage data throughout a program's lifecycle. This includes the code itself, variables, dynamically allocated data, and function call information. The way C++ organizes and accesses memory directly impacts performance, safety, and program correctness.
-
-\vspace{1em}
-\noindent
-The memory that your C++ programs use can be thought of as a 1D contiguous array, with each bucket having an address. Another analogy is a very long street, with houses on either side each with an address.
-
-\subsection{Pointers}
-
-\begin{itemize}
-	\item \textbf{Definition:} A pointer is a variable that stores a memory address.
-	\item Pointers allow for indirect access to and modification of data.
-	\item \textbf{Defining Pointers:} A pointer is declared using the \inlinecpp{*} operator:
-	\centercpp{int* ptr; // pointer to an integer}
-	\item \textbf{Address-of Operator (\inlinecpp{&}):} The address-of operator \inlinecpp{&} is used to obtain the address of a variable:
-	\centercpp{int* ptr = &x; // ptr points to x}
-	\centercpp{std::cout << &x << std::endl; // prints the address of x}
-	\item \textbf{Dereference Operator (\inlinecpp{*}):} Used to access or modify the value at the memory address stored in the pointer:
-	\centercpp{*ptr = 20; // changes x through ptr}
-	\item Pointers provide unmatched flexibility and power but require careful handling to avoid errors.
-	\end{itemize}
-
-\begin{lstlisting}[language=C++]
-#include <iostream>
-
-int main()
-{
-	int x = 10;
-	int* ptr = &x; // ptr "points to" x
-	
-	std::cout << &x << std::endl;  // address of x
-	std::cout << ptr << std::endl; // address of x
-	
-	std::cout << x << std::endl;    // 10
-	std::cout << *ptr << std::endl; // 10
-	
-	*ptr = 5; // modifies x indirectly
-	std::cout << x << std::endl; // 5
-	
-	x = 15; // modifies x directly
-	std::cout << *ptr << std::endl; // 15
-}
-\end{lstlisting}
-
-\subsubsection{\inlinecpp{NULL} Pointers}
-
-\begin{itemize}
-	\item \textbf{Definition:} A pointer that points to \inlinecpp{NULL} (address 0).
-	\item 0 is not a valid memory address for a C++ program, so dereferencing a \inlinecpp{NULL} pointer is undefined.
-	\centercpp{int* ptr = NULL; // defines a NULL pointer}
-	\item \inlinecpp{NULL} is defined to be 0: \inlinecpp{#define NULL 0}
-	\item \inlinecpp{nullptr} is a C++ constant that generally provides more safety than standard \inlinecpp{NULL}.
-	\centercpp{int* ptr = nullptr; // defines a type safe NULL pointer}
-\end{itemize}
-
-\subsubsection{Pointer Arithmetic}
-
-\begin{itemize}
-	\item \textbf{Definition:} Pointer arithmetic refers to how arithmetic operators behave when applied to pointers.
-	\item \textbf{Core Operations:}
-	\begin{itemize}
-		\item \textbf{Increment and Decrement:} moves the pointer to the next or previous memory location (advances by \inlinecpp{sizeof(type)):}
-		\centercpp{int* ptr = &x; ptr++; // moves ptr by sizeof(int)}
-		\item \textbf{Addition and Subtraction:} Offsets a pointer by a specific number of elements:
-		\centercpp{ptr += 2; // advances ptr by 2 * sizeof(int)}
-		\item \textbf{Pointer Difference:} Subtraction two pointers gives the number of elements between them:
-		\centercpp{int n_elements = ptr2 - ptr1; // space between two ptrs}
-	\end{itemize}
-\end{itemize}
-
-\subsubsection{Pointers to Pointers}
-
-\noindent  
-A pointer to a pointer stores the address of another pointer, creating an additional level of indirection.
-
-\begin{itemize}
-    \item \textbf{Declaration:}
-    \inlinecpp{int** ptr2ptr; // points to a pointer to an int}
-\begin{lstlisting}[language=C++]
-int x = 42;
-int* ax = &x;
-int** aax = &ax;
-int*** aaax = &aax;
-
-std::cout << x << std::endl; // 42
-std::cout << *ax << std::endl; // 42
-std::cout << **aax << std::endl; // 42
-std::cout << ***aaax << std::endl; // 42
-\end{lstlisting}
-
-\end{itemize}
-
-\section{Memory Layout}
-
-\noindent
-Your C++ program's memory is divided into different segments, with each segment being designed to serve a different function.
-
-\subsection{Text Segment}
-
-\noindent
-The text segment is a crucial part of a program’s memory layout, specifically in compiled languages like C++. It plays a key role in program execution by storing machine code generated by the compiler.
-
-\begin{itemize}
-	\item \textbf{Definition:} The text segment (code segment) is a read-only section of memory where the compiled instructions of a program are stored.
-	\item \textbf{Read-Only:} The text segment is read-only to prevent accidental modification of the executable instructions during run time.
-	\item \textbf{Fixed Size:} The size of the text segment is determined at compile time and does not grow or shrink during program execution.
-	\item The text segment is read directly from the executable and can be seen in the \texttt{.s} assembly file.
-\end{itemize} 
-
-\subsection{Static Memory}
-
-\noindent
-The static segment, often referred to as the data segment, is another part of a program's memory layout. It stores global and static variables that are allocated for the lifetime of the program. These variables are distinct from those stored on the stack or heap.
-
-\noindent
-\begin{itemize}
-	\item\textbf{Definition:} Static memory refers to the memory that is allocated at program startup and deallocated at program termination.
-
-	\item Static memory holds global and static variables.
-	\begin{itemize}
-		\item\textbf{Initialized Data:} Data that has an assigned value at compile time.
-		\item\textbf{Uninitialized Data:} Has no assigned value (initialized to 0).
-	\end{itemize}
-\end{itemize}
-
-\subsection{The Heap}
-
-\noindent
-The heap is a dynamic memory region used for allocating memory at runtime. Unlike the stack, which is automatically managed, the heap gives the programmer control over memory allocation and deallocation using operators \inlinecpp{new} and \inlinecpp{delete}.
-
-\begin{itemize}
-	\item Memory on the heap persists until explicitly deleted by the programmer.
-	\item Managed manually (\inlinecpp{new}/\inlinecpp{delete}) or semi-automatically (smart pointers).
-\end{itemize}
-
-\begin{comment}
-
-\subsubsection{Operators \inlinecpp{new} and \inlinecpp{delete}}
-
-In C++, dynamic memory allocation is managed using the new and delete operators, which are used to allocate and free memory on the heap, respectively.
-
-\inlinecpp{new}:
-The new operator allocates memory for a specified type and returns a pointer to it: \begin{lstlisting}[language=C++] int* ptr = new int; // Allocates memory for one int *ptr = 10; // Assigns a value to the allocated memory \end{lstlisting}
-
-You can also use new[] to allocate memory for an array: \begin{lstlisting}[language=C++] int* arr = new int[5]; // Allocates memory for an array of 5 ints \end{lstlisting}
-\inlinecpp{delete}:
-The delete operator deallocates memory allocated by new, returning it to the heap. It’s crucial to free dynamically allocated memory to avoid memory leaks: \begin{lstlisting}[language=C++] delete ptr; // Frees memory allocated for a single int delete[] arr; // Frees memory allocated for an array \end{lstlisting}
-
-Best Practices:
-
-Always pair new with delete and new[] with delete[] to avoid undefined behavior.
-Using smart pointers (std::unique_ptr, std::shared_ptr) from C++11 onwards is recommended for automatic memory management.
-
-\subsubsection{Memory Leaks}
-
-A memory leak occurs when dynamically allocated memory is not deallocated properly, causing a program to consume more and more memory over time. This typically happens when:
-
-Failure to Call \inlinecpp{delete}:
-If memory is allocated using new or new[] but never freed with delete or delete[], it remains allocated even after it is no longer needed.
-
-Example: \begin{lstlisting}[language=C++] int* ptr = new int; // Memory allocated // forgot to call delete \end{lstlisting}
-
-Memory Leaks in Loops or Functions:
-Allocating memory in a loop or a function without properly freeing it can quickly lead to significant memory consumption.
-
-Example: \begin{lstlisting}[language=C++] for (int i = 0; i < 1000; ++i) { int* ptr = new int; // No delete, memory leak occurs in every iteration } \end{lstlisting}
-
-Uncaught Exceptions:
-If an exception is thrown after memory is allocated but before it is deallocated, the allocated memory might never be freed. This is why RAII (Resource Acquisition Is Initialization) and smart pointers are commonly used in C++.
-
-Detecting Memory Leaks:
-
-Tools like Valgrind and AddressSanitizer can be used to detect memory leaks in programs.
-Modern C++ developers often rely on smart pointers, which automatically manage memory and help avoid leaks.
-
-\subsection{The Stack}
-
-The stack is a region of memory used for managing function calls, local variables, and control flow during program execution. It operates in a Last In, First Out (LIFO) manner, meaning the most recent function call or variable allocation is the first to be popped off when the function exits. Key characteristics include:
-
-Automatic Allocation and Deallocation:
-Memory on the stack is automatically managed. When a function is called, space for its local variables is allocated on the stack. When the function returns, this space is automatically deallocated.
-
-Fixed Size:
-The size of the stack is typically limited and can vary between platforms. Exceeding this limit (e.g., through deep recursion or large local variables) can result in a stack overflow.
-
-Efficient:
-Stack memory allocation is very fast because it only involves adjusting the stack pointer (a register that tracks the top of the stack), unlike heap memory which involves more complex operations.
-
-Scope and Lifetime:
-
-Local variables are stored on the stack and exist only during the execution of the function in which they are declared. Once the function returns, the stack frame is discarded.
-Function calls and returns are managed using the stack, with each call creating a new stack frame.
-Example of Stack Usage: \begin{lstlisting}[language=C++] void foo() { int local_var = 5; // Allocated on the stack // When foo() exits, local_var is automatically deallocated } \end{lstlisting}
-
-\subsubsection{The Stack Pointer}
-
-The stack pointer (SP) is a special register in a CPU that tracks the current top of the stack. It plays a critical role in managing the stack’s operation during function calls and returns.
-
-Role of the Stack Pointer:
-
-The stack pointer always points to the current top of the stack. It is adjusted automatically by the CPU during function calls and returns, as well as when local variables are pushed onto or popped from the stack.
-Stack Frame Management:
-
-When a function is called, a new "stack frame" is created. This frame contains the function’s local variables and return address. The stack pointer is updated to reflect the new top of the stack.
-Upon returning from the function, the stack pointer is adjusted back to the previous position, effectively "popping" the stack frame and deallocating the local variables.
-Stack Pointer and Recursion:
-
-With recursive functions, each function call creates a new stack frame, and the stack pointer is updated each time. If there are too many recursive calls (exceeding the stack size), a stack overflow may occur.
-Example of Stack Pointer Movement: \begin{lstlisting}[language=C++] void bar() { int var = 10; // 'var' is allocated on the stack // The stack pointer moves when the function call returns } \end{lstlisting}
-
-The stack pointer would be adjusted as bar() exits, reclaiming the memory allocated for var.
-Stack Pointer and Efficiency:
-
-The stack pointer allows efficient memory management since it only requires moving the pointer to allocate and deallocate memory. This is much faster than heap memory management.
-\end{comment}
+\section{I/O with \inlinecpp{iostream}}
+
+\subsection{\inlinecpp{std::cout}}
+
+\subsection{\inlinecpp{std::cin}}
+
+\section{Functions}
+
+\subsection{Introduction to Functions}
+
+\subsubsection{\inlinecpp{return} Keyword}
+
+\subsection{Function Overloading}
+
+\subsection{Scope}
+
+\subsubsection{Defining a Scope}
+
+\subsubsection{Types of Scope}
+
+\section{Conditions and Branches}
+
+\subsection{Boolean Statements}
+
+\subsubsection{\inlinecpp{bool()} Casts}
+
+\subsubsection{Comparison Operators \inlinecpp{==}, \inlinecpp{!=}, \inlinecpp{<}, \inlinecpp{<=}, \inlinecpp{>}, \inlinecpp{>=}}
+
+\subsubsection{Logical Operators \inlinecpp{!}, \inlinecpp{\&\&}, \inlinecpp{||}}
+
+\subsection{\inlinecpp{if} Statements}
+
+\subsection{\inlinecpp{switch} Statements}
+
+\subsection{Ternary Operator \inlinecpp{( ? : )}}
+
+\section{Loops}
+
+\subsection{\inlinecpp{while} Loops}
+
+\subsubsection{\inlinecpp{do while} Loops}
+
+\subsection{\inlinecpp{for} Loops}
+
+\subsection{Control Flow Statements}
+
+\subsubsection{\inlinecpp{break} Keyword}
+
+\subsubsection{\inlinecpp{continue} Keyword}
 
 \end{document}
